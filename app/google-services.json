@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "554970747939",
+    "project_id": "cheatz-438e9",
+    "storage_bucket": "cheatz-438e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:554970747939:android:7b74a4468aecfcc9e0cd96",
+        "android_client_info": {
+          "package_name": "com.cheatz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "554970747939-gv8n1nae4doe8otft13fo9f2qu83atlm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArBf0E_rh1Vleq9HI1t4ptCORxzM-mSnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "554970747939-gv8n1nae4doe8otft13fo9f2qu83atlm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
