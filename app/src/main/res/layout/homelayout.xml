@@ -16,9 +16,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:scaleType="centerInside"
+            android:id="@+id/click"
+            android:layout_height="match_parent">
+        </ImageView>
+
+
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_marginEnd="@dimen/_4sdp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:paddingStart="@dimen/_4sdp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
