@@ -8,16 +8,22 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class ProfileSavedataActivity extends AppCompatActivity {
@@ -91,6 +97,10 @@ public class ProfileSavedataActivity extends AppCompatActivity {
                 }
             });
 
+
+
+
+
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -101,7 +111,7 @@ public class ProfileSavedataActivity extends AppCompatActivity {
                     editor.putString(TEXT3,sem);
                     editor.putString(TEXT4,year);
                     editor.apply();
-                    Toast.makeText(ProfileSavedataActivity.this, "Student profile saved"+"\n"+branchname+"\n"+year+"\n"+subbranch+"\n"+sem, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfileSavedataActivity.this, "Student profile saved"+"\n"+branchname+"\n"+year+"\n"+subbranch+"\n"+sem, Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(ProfileSavedataActivity.this, Homepage.class);
                     startActivity(intent);
                 }

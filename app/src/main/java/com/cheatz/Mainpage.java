@@ -174,7 +174,7 @@ public class Mainpage extends AppCompatActivity {
 
 
             NotifListy = new ArrayList<>();
-            RecyclerView notificationList3 = findViewById(R.id.fiftyconstrainlayout);
+            RecyclerView notificationList3 = findViewById(R.id.recyclerViewfifty);
             notificationsAdaptery = new MainpageRecyclerAdapter(NotifListy);
             notificationList3.setHasFixedSize(true);
             notificationList3.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

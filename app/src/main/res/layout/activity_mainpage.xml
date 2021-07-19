@@ -126,16 +126,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
+        android:layout_marginEnd="@dimen/_16sdp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_16sdp"
+        android:layout_margin="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#FFF"
-        android:layout_margin="@dimen/_16sdp"
+        android:textSize="@dimen/_16sdp"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -222,7 +225,7 @@
             android:paddingTop="@dimen/_8sdp"
             android:paddingEnd="@dimen/_24sdp"
             android:paddingBottom="@dimen/_8sdp"
-            android:text="50+"
+            android:text="50 +"
             android:layout_marginBottom="@dimen/_8sdp"
             android:textAlignment="center"
             android:textAllCaps="false"
