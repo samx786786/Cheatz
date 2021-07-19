@@ -8,6 +8,15 @@
     tools:context=".ImportantActivity">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/background1"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
+
+
+    <ImageView
         android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

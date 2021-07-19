@@ -4,6 +4,15 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+
+
+    <supports-screens
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="false"
+        android:xlargeScreens="false"/>
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,26 +20,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cheatz">
-        <activity android:name=".ImportantActivity"></activity>
-        <activity android:name=".RecycleActivity" />
-        <activity android:name=".Workflow" />
-        <activity android:name=".Searchengine" />
-        <activity android:name=".Zoomimage" />
-        <activity android:name=".ProfileSavedataActivity" />
-        <activity android:name=".Lab" />
-        <activity android:name=".Questionbank" />
-        <activity android:name=".InfoActivity" />
-        <activity android:name=".Mainpage" />
-        <activity android:name=".Homepage">
+        <activity android:name=".ImportantActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".RecycleActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Workflow"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Searchengine"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Zoomimage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ProfileSavedataActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Lab"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Questionbank"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".InfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Mainpage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Homepage"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".TestActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".TestActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/purple_700" />
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

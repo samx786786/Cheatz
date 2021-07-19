@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/background1"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="@dimen/_50sdp"
@@ -87,6 +97,7 @@
             android:textAllCaps="false"
             android:textAlignment="center"
             android:textColor="#FFF"
+            android:maxLines="2"
             android:textSize="@dimen/_16sdp"
             android:layout_marginStart="@dimen/_16sdp"
             app:layout_constraintStart_toStartOf="parent"

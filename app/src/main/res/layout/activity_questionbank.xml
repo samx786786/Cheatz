@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".Questionbank">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/background1"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
 
     <ImageView
         android:id="@+id/imageView11"
@@ -130,6 +137,7 @@
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_8sdp"
+        android:id="@+id/importantquetion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

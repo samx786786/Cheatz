@@ -8,6 +8,15 @@
     tools:context=".InfoActivity">
 
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/background1"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_250sdp"
@@ -40,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginStart="@dimen/_16sdp"
-            android:layout_marginTop="@dimen/_21sdp"
+            android:layout_marginTop="@dimen/_16sdp"
            android:text="@string/education_made_easy_enabling"
             android:textAlignment="textStart"
             android:textAllCaps="false"

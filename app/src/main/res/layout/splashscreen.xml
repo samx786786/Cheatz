@@ -8,15 +8,6 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="@dimen/_200sdp"
-        android:layout_height="@dimen/_280sdp"
-        android:scaleType="fitEnd"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/robo" />
-
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
@@ -26,10 +17,25 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFF"
-        android:textSize="@dimen/_28sdp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        android:textSize="@dimen/_32sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:text="@string/making_education_easy"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

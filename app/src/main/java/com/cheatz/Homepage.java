@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -28,8 +26,6 @@ public class Homepage extends AppCompatActivity {
     private HomeRecyclerAdapter notificationsAdapterx;
     private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
-    TextView ai;
-    ImageView robot;
 
 
     @Override
@@ -37,22 +33,6 @@ public class Homepage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         title=findViewById(R.id.textView17);
-        ai=findViewById(R.id.textView19);
-        robot=findViewById(R.id.imageView12);
-        ai.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Homepage.this, Searchengine.class);
-                startActivity(intent);
-            }
-        });
-        robot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Homepage.this, Searchengine.class);
-                startActivity(intent);
-            }
-        });
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
@@ -101,9 +81,6 @@ public class Homepage extends AppCompatActivity {
                 }
             }
         });
-
-
-
 
     }
 

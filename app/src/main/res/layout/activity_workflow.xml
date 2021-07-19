@@ -7,6 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".Workflow">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/background1"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
+
 
     <ImageView
         android:id="@+id/imageView4"

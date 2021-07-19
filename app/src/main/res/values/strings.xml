@@ -5,12 +5,12 @@
     <string name="profile">Profile</string>
     <string name="info">info</string>
     <string name="education_made_easy_enabling">Cheatz Enabling</string>
-    <string name="student_access_of_various">student Access of various</string>
-    <string name="resources_to_allocate_ease">resources to allocate ease</string>
-    <string name="amp_reduce_educational_stress"><![CDATA[& reduce educational stress]]></string>
-    <string name="to_leverage_better_scores">to leverage better scores</string>
-    <string name="during_exams_lab_internals">during exams, lab, internals.</string>
-    <string name="of_access_for_student_s">of access for student</string>
+    <string name="student_access_of_various">Student Access Of Various</string>
+    <string name="resources_to_allocate_ease">Resources To Allocate Ease</string>
+    <string name="amp_reduce_educational_stress"><![CDATA[& Reduce Educational Stress]]></string>
+    <string name="to_leverage_better_scores">To Leverage Better Scores</string>
+    <string name="during_exams_lab_internals">During Exams, Lab, Internals.</string>
+    <string name="of_access_for_student_s">Of Access For Student</string>
     <string name="home">Home</string>
     <string name="download">Download</string>
     <string name="subjects">Subjects</string>
@@ -29,4 +29,5 @@
     <string name="recycle_your_old_books">Recycle Your Old books, Study Material, Notes , Question paper , Model paper ,News Papers</string>
     <string name="recycle">Recycle</string>
     <string name="we_will_reach_you_during_weekend_to_collect_the_items_thank_you">We Will Reach You During Weekend To Collect the items, Thank You..</string>
+    <string name="making_education_easy">Making Education Easy</string>
 </resources>
