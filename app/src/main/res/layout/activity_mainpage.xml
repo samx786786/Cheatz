@@ -111,6 +111,7 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
     <SearchView
         android:id="@+id/search_field"
         android:layout_width="0dp"
@@ -141,6 +142,8 @@
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"

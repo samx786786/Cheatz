@@ -8,19 +8,10 @@
     tools:context=".Workflow">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:background="#000"
-        app:srcCompat="@drawable/background1"
-        android:scaleType="centerCrop"
-        android:layout_height="match_parent">
-    </ImageView>
-
-
-    <ImageView
         android:id="@+id/imageView4"
+        android:layout_width="52dp"
+        android:layout_height="56dp"
         android:layout_marginTop="@dimen/_16sdp"
-        android:layout_width="@dimen/_34sdp"
-        android:layout_height="@dimen/_34sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,7 +33,7 @@
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Coming Soon"
+        android:text="@string/coming_soon"
         android:textColor="#FFF"
         android:textSize="@dimen/_32sdp"
         app:layout_constraintBottom_toBottomOf="parent"
