@@ -46,14 +46,12 @@ public class RecycleActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<DocumentReference> task) {
 
-                        // to the thinggggg
+                        // to the things
+
 
 
                     }
                 });
-
-
-
             }
         });
     }

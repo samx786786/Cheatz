@@ -16,4 +16,6 @@ public class syllabusmodel {
     public void setSyllabus(String syllabus) {
         this.syllabus = syllabus;
     }
+
+
 }
