@@ -4,14 +4,11 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
-
-
     <supports-screens
         android:largeScreens="true"
         android:normalScreens="true"
         android:smallScreens="false"
-        android:xlargeScreens="false"/>
-
+        android:xlargeScreens="false" />
 
     <application
         android:allowBackup="true"
@@ -20,39 +17,52 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cheatz">
-        <activity android:name=".ImportantActivity"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name=".RecycleActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Searchengine"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Zoomimage"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ProfileSavedataActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Lab"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Questionbank"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".InfoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Mainpage"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Homepage"
+        <activity android:name=".Shopui"></activity>
+        <activity
+            android:name=".ImportantActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".RecycleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Searchengine"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Zoomimage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProfileSavedataActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Lab"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Questionbank"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Mainpage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Homepage"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ProfileActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TestActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".ProfileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
@@ -65,7 +75,6 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>
