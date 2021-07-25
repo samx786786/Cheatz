@@ -52,18 +52,19 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_baseline_create_24" />
+            app:srcCompat="@drawable/ic_icon_awesome_download" />
+
 
         <ImageView
             android:id="@+id/imageView7"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginBottom="@dimen/_21sdp"
+            android:layout_marginBottom="28dp"
             app:layout_constraintBottom_toTopOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.423"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/ic_icon_awesome_question" />
-
+            app:srcCompat="@drawable/ic_baseline_create_24" />
 
         <ImageView
             android:id="@+id/imageView8"
@@ -73,7 +74,8 @@
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView7"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_awesome_square_root_alt"/>
+
+            app:srcCompat="@drawable/ic_icon_awesome_question"/>
 
 
         <ImageView
@@ -81,10 +83,11 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
+            android:visibility="visible"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView8"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_metro_flow_tree" />
+            app:srcCompat="@drawable/ic_icon_awesome_square_root_alt" />
 
 
         <ImageView
@@ -92,19 +95,31 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_metro_lab" />
+            app:srcCompat="@drawable/ic_icon_metro_flow_tree" />
 
         <ImageView
             android:id="@+id/imageView11"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
+            android:visibility="gone"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_icon_metro_lab" />
+
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/_21sdp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/ic_baseline_recycling_24" />
 

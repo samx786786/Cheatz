@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".RecycleActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:background="#000"
+        app:srcCompat="@drawable/backgroud2"
+        android:scaleType="centerCrop"
+        android:layout_height="match_parent">
+    </ImageView>
 
     <ImageView
         android:id="@+id/imageView15"
@@ -138,6 +145,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button4"
         app:lottie_autoPlay="true"
+        android:background="@android:color/transparent"
         app:lottie_fileName="23997-ecoleta.json"
         app:lottie_loop="true" />
 

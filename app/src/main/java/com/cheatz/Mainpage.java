@@ -36,7 +36,7 @@ public class Mainpage extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     FirebaseFirestore firestore;
-    ImageView home,tools,download,questionbank,lab,workflow,Recycle,importantformulas;
+
     private MainpageRecyclerAdapter notificationsAdapterx;
     private List<Mainpagemodel> NotifListx;
     private MainpageRecyclerAdapter notificationsAdaptery;
@@ -51,35 +51,41 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowpass;
 
 
+    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
-        importantformulas=findViewById(R.id.imageView8);
-        Recycle=findViewById(R.id.imageView11);
-        Recycle.setOnClickListener(new View.OnClickListener() {
+
+
+        homeicon=findViewById(R.id.imageView2);
+        toolicon=findViewById(R.id.imageView5);
+        downloadicon=findViewById(R.id.imageView6);
+        notesicon=findViewById(R.id.imageView7);
+        questionbankicon=findViewById(R.id.imageView8);
+        importantquestionicon=findViewById(R.id.imageView9);
+        workflowicon=findViewById(R.id.imageView10);
+        labicon=findViewById(R.id.imageView11);
+        recycleicon=findViewById(R.id.imageView12);
+
+
+
+
+
+
+        recycleicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Mainpage.this,RecycleActivity.class);
                 startActivity(intent);
             }
         });
-        workflow=findViewById(R.id.imageView9);
-        workflow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainpage.this,Workflow.class);
-                startActivity(intent);
-            }
-        });
+
         title=findViewById(R.id.textView17);
-        home=findViewById(R.id.imageView2);
-        tools=findViewById(R.id.imageView5);
-        lab=findViewById(R.id.imageView10);
-        download=findViewById(R.id.imageView6);
-        questionbank=findViewById(R.id.imageView7);
-        home.setOnClickListener(new View.OnClickListener() {
+
+        homeicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Mainpage.this,Homepage.class);
@@ -137,7 +143,7 @@ public class Mainpage extends AppCompatActivity {
         {
             String subjectname = bundle1.get("subjectname").toString();
             title.setText(branchname+"\n"+subbranchname+"\n"+sem+"\n"+year+"\n"+subjectname);
-            questionbank.setOnClickListener(new View.OnClickListener() {
+            questionbankicon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent Intent = new Intent(Mainpage.this, Questionbank.class);
@@ -145,7 +151,7 @@ public class Mainpage extends AppCompatActivity {
                     startActivity(Intent);
                 }
             });
-            importantformulas.setOnClickListener(new View.OnClickListener() {
+            importantquestionicon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(Mainpage.this,ImportantActivity.class);
@@ -219,10 +225,11 @@ public class Mainpage extends AppCompatActivity {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
                             String laburl = task.getResult().getString("laburl");
+                            String downloadurl = task.getResult().getString("downloadurl");
                             if(laburl!=null&& laburl.equals(""))
                             {
-                                lab.setVisibility(View.VISIBLE);
-                                lab.setOnClickListener(new View.OnClickListener() {
+                                labicon.setVisibility(View.VISIBLE);
+                                labicon.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
                                         Intent Intent = new Intent(Mainpage.this, Lab.class);
@@ -231,17 +238,24 @@ public class Mainpage extends AppCompatActivity {
                                     }
                                 });
                             }
-                            tools.setOnClickListener(new View.OnClickListener() {
+                            toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(toolsurl));
                                     startActivity(browserIntent);
                                 }
                             });
-                            download.setOnClickListener(new View.OnClickListener() {
+                            notesicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
+                                    startActivity(browserIntent);
+                                }
+                            });
+                            downloadicon.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadurl));
                                     startActivity(browserIntent);
                                 }
                             });
