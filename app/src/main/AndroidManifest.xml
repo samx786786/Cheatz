@@ -17,10 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cheatz">
-        <activity android:name=".Shopui"></activity>
+        <activity android:name=".CheckoutActivity"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".Shopui"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ImportantActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".RecycleActivity"
             android:screenOrientation="portrait" />
