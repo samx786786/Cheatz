@@ -172,7 +172,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/hunderprecentageconstrainlayout"
         android:layout_margin="@dimen/_8sdp"
         app:layout_constraintBottom_toTopOf="@+id/search_field"
@@ -211,13 +211,14 @@
 
         <ImageView
             android:id="@+id/imageView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/circlewhitebg"
             app:layout_constraintBottom_toBottomOf="@+id/button2"
             app:layout_constraintEnd_toStartOf="@+id/button2"
             app:layout_constraintTop_toTopOf="@+id/button2"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+            app:srcCompat="@drawable/ic_icon_ionic_ios_arrow_dropleft_circle"  />
 
 
 
@@ -253,7 +254,7 @@
             android:paddingTop="@dimen/_8sdp"
             android:paddingEnd="@dimen/_24sdp"
             android:paddingBottom="@dimen/_8sdp"
-            android:text="50 +"
+            android:text="@string/_50"
             android:layout_marginBottom="@dimen/_8sdp"
             android:textAlignment="center"
             android:textAllCaps="false"
@@ -265,30 +266,32 @@
 
         <ImageView
             android:id="@+id/imageView3fifty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@drawable/circlewhitebg"
             app:layout_constraintBottom_toBottomOf="@+id/button2fifty"
             app:layout_constraintEnd_toStartOf="@+id/button2fifty"
             app:layout_constraintTop_toTopOf="@+id/button2fifty"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+            app:srcCompat="@drawable/ic_icon_ionic_ios_arrow_dropleft_circle"  />
 
         <ImageView
             android:id="@+id/imageView4fifty"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_30sdp"
             android:visibility="visible"
-            android:layout_height="wrap_content"
+            android:background="@drawable/circlewhitebg"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_8sdp"
             app:layout_constraintBottom_toBottomOf="@+id/button2fifty"
             app:layout_constraintStart_toEndOf="@+id/button2fifty"
             app:layout_constraintTop_toTopOf="@+id/button2fifty"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+            app:srcCompat="@drawable/ic_icon_ionic_ios_arrow_dropright_circle"  />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:id="@+id/passconstrainlayout"
         android:layout_margin="@dimen/_8sdp"
         app:layout_constraintBottom_toTopOf="@+id/search_field"
@@ -330,14 +333,15 @@
 
         <ImageView
             android:id="@+id/imageView4pass"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_30sdp"
             android:visibility="visible"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_8sdp"
+            android:background="@drawable/circlewhitebg"
             app:layout_constraintBottom_toBottomOf="@+id/button2pass"
             app:layout_constraintStart_toEndOf="@+id/button2pass"
             app:layout_constraintTop_toTopOf="@+id/button2pass"
-            app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+            app:srcCompat="@drawable/ic_icon_ionic_ios_arrow_dropright_circle"  />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     
