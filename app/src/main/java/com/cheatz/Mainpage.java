@@ -71,10 +71,6 @@ public class Mainpage extends AppCompatActivity {
         recycleicon=findViewById(R.id.imageView12);
 
 
-
-
-
-
         recycleicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
