@@ -3,6 +3,7 @@ plugins {
     id 'com.google.gms.google-services'
     id 'com.google.firebase.firebase-perf'
     id 'com.google.firebase.appdistribution'
+    id 'com.google.firebase.crashlytics'
 }
 
 android {
@@ -44,6 +45,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-perf:20.0.2'
     implementation 'com.google.firebase:firebase-dynamic-links:20.1.1'
     implementation 'com.google.firebase:firebase-appindexing:20.0.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.0'
+    implementation 'com.google.firebase:firebase-analytics:19.0.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

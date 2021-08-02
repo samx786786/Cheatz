@@ -26,7 +26,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 public class Mainpage extends AppCompatActivity {
 
     TextView title;
@@ -36,7 +35,6 @@ public class Mainpage extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     FirebaseFirestore firestore;
-
     private MainpageRecyclerAdapter notificationsAdapterx;
     private List<Mainpagemodel> NotifListx;
     private MainpageRecyclerAdapter notificationsAdaptery;
@@ -49,17 +47,13 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-
-
-    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon;
+    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon,marketicon;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
-
-
         homeicon=findViewById(R.id.imageView2);
         toolicon=findViewById(R.id.imageView5);
         downloadicon=findViewById(R.id.imageView6);
@@ -69,8 +63,14 @@ public class Mainpage extends AppCompatActivity {
         workflowicon=findViewById(R.id.imageView10);
         labicon=findViewById(R.id.imageView11);
         recycleicon=findViewById(R.id.imageView12);
-
-
+        marketicon=findViewById(R.id.imageView13);
+        marketicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Mainpage.this,Shopui.class);
+                startActivity(intent);
+            }
+        });
         recycleicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,9 +78,7 @@ public class Mainpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
         title=findViewById(R.id.textView17);
-
         homeicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +125,6 @@ public class Mainpage extends AppCompatActivity {
                 Constrainlayoutpass.setVisibility(View.GONE);
             }
         });
-
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
@@ -155,7 +152,6 @@ public class Mainpage extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
-
             NotifListx = new ArrayList<>();
             RecyclerView notificationList = findViewById(R.id.recyclerView);
             notificationsAdapterx = new MainpageRecyclerAdapter(NotifListx);
@@ -173,8 +169,6 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-
-
             NotifListy = new ArrayList<>();
             RecyclerView notificationList3 = findViewById(R.id.recyclerViewfifty);
             notificationsAdaptery = new MainpageRecyclerAdapter(NotifListy);
@@ -192,8 +186,6 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-
-            
             NotifListz = new ArrayList<>();
             RecyclerView notificationList2 = findViewById(R.id.recyclerViewpass);
             notificationsAdapterz = new MainpageRecyclerAdapter(NotifListz);
@@ -211,7 +203,6 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-
             // logic error fix
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Tools").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -266,6 +257,5 @@ public class Mainpage extends AppCompatActivity {
             });
 
         }
-
     }
 }
