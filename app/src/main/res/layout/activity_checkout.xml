@@ -112,15 +112,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
         </LinearLayout>
     </HorizontalScrollView>
 
@@ -220,7 +211,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#FFF"
-        android:textSize="@dimen/_28sdp"
+        android:textSize="@dimen/_32sdp"
         app:layout_constraintBottom_toTopOf="@+id/imageView17"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
