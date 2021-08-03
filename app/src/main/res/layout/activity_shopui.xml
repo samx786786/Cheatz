@@ -51,17 +51,6 @@
 
 
         <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="@dimen/_34sdp"
-            android:layout_height="@dimen/_34sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/_28sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/home" />
-
-
-        <ImageView
             android:id="@+id/imageView3"
             android:layout_width="41dp"
             android:layout_height="50dp"
