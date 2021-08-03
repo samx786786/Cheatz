@@ -22,10 +22,8 @@
         android:id="@+id/homepagerecyler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_16sdp"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintTop_toBottomOf="@+id/textView17">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView12">
     </androidx.recyclerview.widget.RecyclerView>
 
 
@@ -47,11 +45,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="@dimen/_20sdp"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textColor="#FFF"
-        android:layout_marginBottom="@dimen/_16sdp"
+        android:layout_margin="@dimen/_16sdp"
+        android:textSize="@dimen/_20sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -49,7 +49,6 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowpass;
     ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon,marketicon;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

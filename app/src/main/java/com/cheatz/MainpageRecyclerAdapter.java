@@ -15,10 +15,8 @@ import java.util.List;
 
 public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecyclerAdapter.ViewHolder>  {
 
-
     public List<Mainpagemodel> mainList;
     public Context context;
-
     public MainpageRecyclerAdapter(List<Mainpagemodel> notifList) {
         this.mainList=notifList;
     }
@@ -44,17 +42,14 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
                 Intent Intent = new Intent(context, Zoomimage.class);
                 Intent.putExtra("imageurl",imageurl);
                 context.startActivity(Intent);
-
             }
         });
-
         holder.youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
             }
         });
-
         holder.textview.setText(name);
         holder.textview.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,7 +57,6 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
                 context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
             }
         });
-
     }
 
     @Override
@@ -75,8 +69,6 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
         ImageView youtube;
         View mView;
         ImageView image;
-
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView info;
+    ImageView info,shop,recycle;
     TextView infotextview;
     private branchselectrecycleradapter notificationsAdapterx;
     private List<branchmodel> NotifListx;
@@ -29,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         info=findViewById(R.id.imageView);
+        shop=findViewById(R.id.imageView13);
+        recycle=findViewById(R.id.imageView12);
+        recycle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecycleActivity.class);
+                startActivity(intent);
+            }
+        });
+        shop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Shopui.class);
+                startActivity(intent);
+            }
+        });
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
