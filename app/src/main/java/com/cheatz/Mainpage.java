@@ -47,7 +47,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon,marketicon;
+    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon,marketicon,buildcommunity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,12 @@ public class Mainpage extends AppCompatActivity {
         labicon=findViewById(R.id.imageView11);
         recycleicon=findViewById(R.id.imageView12);
         marketicon=findViewById(R.id.imageView13);
+        buildcommunity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // intent for hiring people to develop the platform
+            }
+        });
         marketicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
