@@ -42,4 +42,5 @@
     <string name="_50">50 +</string>
     <string name="important_synopsis">Important Synopsis</string>
     <string name="add_to_cart">Add To Cart</string>
+    <string name="order_id">Order ID</string>
 </resources>

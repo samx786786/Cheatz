@@ -11,10 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cheatz">
-        <activity android:name=".ItemDeatialActivity"></activity>
+        <activity android:name=".TrackPackageActivity"></activity>
+        <activity android:name=".ItemDeatialActivity" />
         <activity
             android:name=".CheckoutActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Shopui"
             android:screenOrientation="portrait" />
