@@ -31,20 +31,19 @@ public class RecycleActivity extends AppCompatActivity {
         recycle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 String username=name.getText().toString();
                 String contactnumber=contact.getText().toString();
                 String useraddress=address.getText().toString();
-
                 Map<String, String> userMap = new HashMap<>();
                 userMap.put("name", username);
                 userMap.put("contact",contactnumber);
                 userMap.put("address",useraddress);
-
                 firestore.collection("Recycle").add(userMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
                     @Override
                     public void onComplete(@NonNull Task<DocumentReference> task) {
                         // do the task like chat app
+
+
 
                     }
                 });

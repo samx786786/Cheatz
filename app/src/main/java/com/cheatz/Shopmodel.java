@@ -5,22 +5,24 @@ public class Shopmodel {
     String bookname;
     String author;
     String publishingyear;
-    String price;
+    int price;
     String searchtag;
     String uploaddate;
-    String offerprice;
+    String aboutbook;
+    String backgroundurl;
 
 
     public Shopmodel(){}
 
-    public Shopmodel(String bookname, String author, String publishingyear, String price, String searchtag, String uploaddate, String offerprice) {
+    public Shopmodel(String bookname, String author, String publishingyear, int price, String searchtag, String uploaddate, String aboutbook, String backgroundurl) {
         this.bookname = bookname;
         this.author = author;
         this.publishingyear = publishingyear;
         this.price = price;
         this.searchtag = searchtag;
         this.uploaddate = uploaddate;
-        this.offerprice = offerprice;
+        this.aboutbook = aboutbook;
+        this.backgroundurl = backgroundurl;
     }
 
     public String getBookname() {
@@ -47,11 +49,11 @@ public class Shopmodel {
         this.publishingyear = publishingyear;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -71,13 +73,19 @@ public class Shopmodel {
         this.uploaddate = uploaddate;
     }
 
-    public String getOfferprice() {
-        return offerprice;
+    public String getAboutbook() {
+        return aboutbook;
     }
 
-    public void setOfferprice(String offerprice) {
-        this.offerprice = offerprice;
+    public void setAboutbook(String aboutbook) {
+        this.aboutbook = aboutbook;
     }
 
+    public String getBackgroundurl() {
+        return backgroundurl;
+    }
 
+    public void setBackgroundurl(String backgroundurl) {
+        this.backgroundurl = backgroundurl;
+    }
 }

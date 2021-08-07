@@ -38,6 +38,8 @@
             android:layout_width="0dp"
             android:paddingStart="@dimen/_8sdp"
             android:paddingEnd="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textAllCaps="false"

@@ -59,8 +59,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //adaptive size library
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-    implementation 'com.github.devendroid:ReadMoreOption:1.0.2' // read more
     implementation 'com.carteasy.v1.lib:carteasy:0.0.6' //cart easy
     implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.2'
     implementation 'com.github.tcqq:timelineview:2.1.2'
+    implementation 'com.borjabravo:readmoretextview:2.1.0'
 }

@@ -43,4 +43,7 @@
     <string name="important_synopsis">Important Synopsis</string>
     <string name="add_to_cart">Add To Cart</string>
     <string name="order_id">Order ID</string>
+    <string name="contact">Contact</string>
+    <string name="your_name">Your Name</string>
+    <string name="address">Address</string>
 </resources>

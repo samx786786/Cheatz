@@ -19,7 +19,7 @@
         tools:layout_editor_absoluteX="10dp">
 
 
-        <androidx.appcompat.widget.AppCompatButton
+        <Button
             android:id="@+id/appCompatButton"
             android:layout_width="@dimen/_110sdp"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
-        </androidx.appcompat.widget.AppCompatButton>
+        </Button>
 
         <TextView
             android:id="@+id/textView32"
