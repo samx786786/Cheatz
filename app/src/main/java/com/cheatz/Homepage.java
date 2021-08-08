@@ -27,7 +27,6 @@ public class Homepage extends AppCompatActivity {
     private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +62,6 @@ public class Homepage extends AppCompatActivity {
             Intent intent = new Intent(Homepage.this, MainActivity.class);
             startActivity(intent);
         }
-
         NotifListx = new ArrayList<>();
         RecyclerView notificationList = findViewById(R.id.homepagerecyler);
         notificationsAdapterx = new HomeRecyclerAdapter(NotifListx);
@@ -81,10 +79,5 @@ public class Homepage extends AppCompatActivity {
                 }
             }
         });
-
-
     }
-
-
-
 }

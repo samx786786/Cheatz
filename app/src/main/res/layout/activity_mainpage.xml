@@ -136,15 +136,6 @@
             app:srcCompat="@drawable/ic_icon_feather_shopping_bag" />
 
 
-        <ImageView
-            android:id="@+id/imageView14"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="@dimen/_21sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView13"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_material_build" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

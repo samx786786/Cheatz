@@ -47,7 +47,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,labicon,recycleicon,marketicon,buildcommunity;
+    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,recycleicon,marketicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,15 +60,8 @@ public class Mainpage extends AppCompatActivity {
         questionbankicon=findViewById(R.id.imageView8);
         importantquestionicon=findViewById(R.id.imageView9);
         workflowicon=findViewById(R.id.imageView10);
-        labicon=findViewById(R.id.imageView11);
         recycleicon=findViewById(R.id.imageView12);
         marketicon=findViewById(R.id.imageView13);
-        buildcommunity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // intent for hiring people to develop the platform
-            }
-        });
         marketicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -216,20 +209,7 @@ public class Mainpage extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
-                            String laburl = task.getResult().getString("laburl");
                             String downloadurl = task.getResult().getString("downloadurl");
-                            if(laburl!=null&& laburl.equals(""))
-                            {
-                                labicon.setVisibility(View.VISIBLE);
-                                labicon.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Intent Intent = new Intent(Mainpage.this, Lab.class);
-                                        Intent.putExtra("subjectname",subjectname);
-                                        startActivity(Intent);
-                                    }
-                                });
-                            }
                             toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {

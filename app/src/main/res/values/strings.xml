@@ -46,5 +46,5 @@
     <string name="contact">Contact</string>
     <string name="your_name">Your Name</string>
     <string name="address">Address</string>
-    <string name="add_to_cart">Add To Cart</string>
+    <string name="price_0">Price ₹ 0</string>
 </resources>

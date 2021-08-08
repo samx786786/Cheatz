@@ -36,53 +36,66 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         String subjectname=mainList.get(position).getSubjectname();
         String notesurl=mainList.get(position).getNotesurl();
         String youtubeurl=mainList.get(position).getYoutubeurl();
+        String intentfunction=mainList.get(position).Intent;
         holder.textview.setText(subjectname);
-        holder.notes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
-                context.startActivity(browserIntent);
+        if (!intentfunction.equals("lab"))
+        {
+            holder.notes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
+                    context.startActivity(browserIntent);
+                }
+            });
+
+            holder.youtube.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
+                }
+            });
+
+            holder.questionbank.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent Intent = new Intent(context, Questionbank.class);
+                    Intent.putExtra("subjectname",subjectname);
+                    context.startActivity(Intent);
+                }
+            });
+
+            holder.textview.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent Intent = new Intent(context, Mainpage.class);
+                    Intent.putExtra("subjectname",subjectname);
+                    context.startActivity(Intent);
+                }
+            });
+
+            holder.click.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent Intent = new Intent(context, Mainpage.class);
+                    Intent.putExtra("subjectname",subjectname);
+                    context.startActivity(Intent);
+                }
+            });
+        }
+        else
+            {
+                holder.notes.setVisibility(View.INVISIBLE);
+                holder.questionbank.setVisibility(View.INVISIBLE);
+                holder.youtube.setVisibility(View.INVISIBLE);
+                holder.click.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Lab.class);
+                        Intent.putExtra("subjectname",subjectname);
+                        context.startActivity(Intent);
+                    }
+                });
             }
-        });
-
-        holder.youtube.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
-            }
-        });
-
-        holder.questionbank.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Questionbank.class);
-                Intent.putExtra("subjectname",subjectname);
-                context.startActivity(Intent);
-            }
-        });
-
-        holder.textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Mainpage.class);
-                Intent.putExtra("subjectname",subjectname);
-                context.startActivity(Intent);
-            }
-        });
-
-        holder.click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Mainpage.class);
-                Intent.putExtra("subjectname",subjectname);
-                context.startActivity(Intent);
-            }
-        });
-        
-
-
-
-
     }
 
     @Override

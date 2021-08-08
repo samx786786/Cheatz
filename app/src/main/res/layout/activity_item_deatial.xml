@@ -91,7 +91,7 @@
                         android:layout_marginTop="@dimen/_16sdp"
                         android:layout_marginBottom="@dimen/_24sdp"
                         android:maxLines="1"
-                        android:text="Price   0  "
+                        android:text="@string/price_0"
                         android:textAllCaps="false"
                         android:textColor="#FFF"
                         android:textSize="@dimen/_14sdp"

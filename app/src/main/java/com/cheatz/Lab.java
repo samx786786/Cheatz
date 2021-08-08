@@ -3,9 +3,8 @@ package com.cheatz;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
+import android.widget.TextView;
 import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.util.List;
 
 public class Lab extends AppCompatActivity {
@@ -18,19 +17,26 @@ public class Lab extends AppCompatActivity {
     private labRecyclerAdapter notificationsAdapterx;
     private List<labmodel> NotifListx;
     FirebaseFirestore firestore;
-
+    TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab);
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-
         String branchname = sharedPreferences.getString(TEXT1, "");
         String subbranchname = sharedPreferences.getString(TEXT2, "");
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
+        title=findViewById(R.id.textView16);
+        firestore = FirebaseFirestore.getInstance();
+        Bundle bundle1 = getIntent().getExtras();
+        if (bundle1 != null) {
+            String subjectname = bundle1.get("subjectname").toString();
+            title.setText("Viva Questions"+"\n"+subjectname);
+            // load lab viva queation
+            // get record url and manuel pdf
 
-
+        }
     }
 }

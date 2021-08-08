@@ -5,15 +5,17 @@ public class Homemodel {
     String subjectname;
     String Youtubeurl;
     String notesurl;
-
+    String Intent;
 
 
     public Homemodel(){}
 
-    public Homemodel(String subjectname, String youtubeurl, String notesurl) {
+
+    public Homemodel(String subjectname, String youtubeurl, String notesurl, String intent) {
         this.subjectname = subjectname;
         Youtubeurl = youtubeurl;
         this.notesurl = notesurl;
+        Intent = intent;
     }
 
     public String getSubjectname() {
@@ -38,5 +40,13 @@ public class Homemodel {
 
     public void setNotesurl(String notesurl) {
         this.notesurl = notesurl;
+    }
+
+    public String getIntent() {
+        return Intent;
+    }
+
+    public void setIntent(String intent) {
+        Intent = intent;
     }
 }
