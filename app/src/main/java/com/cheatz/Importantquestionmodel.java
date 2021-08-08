@@ -6,9 +6,7 @@ public class Importantquestionmodel {
     String answer;
     String imageurl;
 
-
     public Importantquestionmodel(){}
-
 
     public Importantquestionmodel(String quetion, String answer, String imageurl) {
         this.quetion = quetion;

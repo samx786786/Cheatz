@@ -40,7 +40,6 @@ public class ImportantRecyclerAdapter  extends RecyclerView.Adapter<ImportantRec
             holder.textview.setVisibility(View.VISIBLE);
             holder.textview.setText(question+"\n"+answer);
         }
-
         if (imageurl!=null&&imageurl=="")
         {
             holder.textview.setVisibility(View.VISIBLE);
@@ -56,8 +55,6 @@ public class ImportantRecyclerAdapter  extends RecyclerView.Adapter<ImportantRec
                 }
             });
         }
-
-
     }
 
     @Override
