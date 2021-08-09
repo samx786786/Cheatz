@@ -13,7 +13,8 @@
         android:layout_height="match_parent"
         android:background="#000"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background1"></ImageView>
+        app:srcCompat="@drawable/background1">
+    </ImageView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,61 +49,26 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:ellipsize="end"
-            android:text="@string/lab_manual"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFF"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </TextView>
-
-
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            app:layout_constraintBottom_toTopOf="@+id/textView41"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginBottom="@dimen/_8sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_baseline_download_24" />
-
-
-        <TextView
-            android:id="@+id/textView42"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/_16sdp"
-            android:ellipsize="end"
-            android:text="@string/lab_record"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFF"
-            android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView6"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
-        </TextView>
 
 
         <ImageView
             android:id="@+id/imageView12"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            app:layout_constraintBottom_toTopOf="@+id/textView42"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/ic_baseline_create_24" />
-
 
 
 

@@ -15,8 +15,6 @@ public class ImportantActivity extends AppCompatActivity {
     public static final String TEXT2 = "text2";
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
-    private labRecyclerAdapter notificationsAdapterx;
-    private List<labmodel> NotifListx;
     FirebaseFirestore firestore;
 
 
