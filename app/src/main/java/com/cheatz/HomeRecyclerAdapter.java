@@ -87,6 +87,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
                 holder.notes.setVisibility(View.INVISIBLE);
                 holder.questionbank.setVisibility(View.INVISIBLE);
                 holder.youtube.setVisibility(View.INVISIBLE);
+                holder.lab.setVisibility(View.VISIBLE);
                 holder.click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -107,7 +108,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         TextView textview;
         View mView;
         ImageView click;
-        ImageButton youtube,notes,questionbank;
+        ImageButton youtube,notes,questionbank,lab;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
@@ -116,6 +117,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
             youtube=mView.findViewById(R.id.imageButton3);
             notes=mView.findViewById(R.id.imageButton2);
             questionbank=mView.findViewById(R.id.imageButton);
+            lab=mView.findViewById(R.id.imageButton5);
         }
     }
 }

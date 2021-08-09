@@ -47,4 +47,6 @@
     <string name="your_name">Your Name</string>
     <string name="address">Address</string>
     <string name="price_0">Price ₹ 0</string>
+    <string name="lab_manual">Lab Manual</string>
+    <string name="lab_record">Lab Record</string>
 </resources>

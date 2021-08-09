@@ -59,16 +59,6 @@
             app:srcCompat="@drawable/ic_baseline_recycling_24" />
 
 
-        <ImageView
-            android:id="@+id/imageView13"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="@dimen/_21sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView12"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_feather_shopping_bag" />
-
 
 
 
