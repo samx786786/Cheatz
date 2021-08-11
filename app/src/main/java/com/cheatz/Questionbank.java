@@ -73,7 +73,6 @@ public class Questionbank extends AppCompatActivity {
                 }
             });
 
-
             // check logic once 
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"ImportantQuestion"+"Tools").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -130,20 +129,6 @@ public class Questionbank extends AppCompatActivity {
                     Toast.makeText(Questionbank.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-
-
-
-
-
-
-
-
-
-
         }
-
-
     }
-
-
 }

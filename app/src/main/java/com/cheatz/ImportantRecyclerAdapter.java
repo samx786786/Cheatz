@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import java.util.List;
@@ -31,7 +32,6 @@ public class ImportantRecyclerAdapter  extends RecyclerView.Adapter<ImportantRec
 
     @Override
     public void onBindViewHolder(@NonNull ImportantRecyclerAdapter.ViewHolder holder, int position) {
-
         String question=mainList.get(position).getQuetion();
         String answer=mainList.get(position).getAnswer();
         String imageurl=mainList.get(position).getImageurl();
@@ -45,6 +45,7 @@ public class ImportantRecyclerAdapter  extends RecyclerView.Adapter<ImportantRec
             holder.textview.setVisibility(View.VISIBLE);
             holder.textview.setText(question+"\n"+answer);
             holder.image.setVisibility(View.VISIBLE);
+            holder.cardView.setVisibility(View.VISIBLE);
             Picasso.get().load(imageurl).into(holder.image);
             holder.image.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -66,11 +67,13 @@ public class ImportantRecyclerAdapter  extends RecyclerView.Adapter<ImportantRec
         ImageView image;
         TextView textview;
         View mView;
+        CardView cardView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
-            image=mView.findViewById(R.id.imageView14);
+            image=mView.findViewById(R.id.imagevsd);
             textview=mView.findViewById(R.id.textView28);
+            cardView=mView.findViewById(R.id.imageView14);
         }
     }
 }

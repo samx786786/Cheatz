@@ -33,7 +33,6 @@ public class ProfileActivity extends AppCompatActivity {
     private List<Selectormodel> NotifListx;
     FirebaseFirestore firestore;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
