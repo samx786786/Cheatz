@@ -98,9 +98,6 @@ public class ProfileSavedataActivity extends AppCompatActivity {
             });
 
 
-
-
-
             imageButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

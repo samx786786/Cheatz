@@ -2,29 +2,19 @@ package com.cheatz;
 
 public class SynopsisModel {
 
-    String question,answers;
+     String url;
 
     public SynopsisModel(){}
 
-
-    public SynopsisModel(String question, String answers) {
-        this.question = question;
-        this.answers = answers;
+    public SynopsisModel(String url) {
+        this.url = url;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getUrl() {
+        return url;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
-
-    public String getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(String answers) {
-        this.answers = answers;
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
