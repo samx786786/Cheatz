@@ -75,7 +75,6 @@
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView7"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:srcCompat="@drawable/ic_icon_awesome_question"/>
 
 
@@ -96,7 +95,7 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
-            android:visibility="visible"
+            android:visibility="gone"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView9"
             app:layout_constraintEnd_toEndOf="parent"

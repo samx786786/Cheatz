@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_marginStart="@dimen/_8sdp"
+    android:layout_marginStart="@dimen/_16sdp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -11,7 +11,7 @@
         android:id="@+id/textView25"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="@dimen/_12sdp"
         android:textAlignment="center"
         android:textColor="#FFF"
         android:ellipsize="end"
@@ -22,12 +22,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/constraintLayout3"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_width="@dimen/_156sdp"
         android:layout_height="@dimen/_287sdp"
-        android:background="@drawable/infobg"
+        app:cardBackgroundColor="#000"
+        app:cardCornerRadius="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25">
@@ -43,7 +44,7 @@
             tools:layout_editor_absoluteY="74dp">
         </androidx.appcompat.widget.AppCompatImageView>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
     <ImageButton

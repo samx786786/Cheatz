@@ -43,7 +43,7 @@ public class ImportantActivity extends AppCompatActivity {
             String subjectname = bundle1.get("subjectname").toString();
             title.setText("Important Synopsis"+"\n"+subjectname);
             NotifListx = new ArrayList<>();
-            RecyclerView notificationList = findViewById(R.id.vivaquestions);
+            RecyclerView notificationList = findViewById(R.id.imporatantrecycleradapter);
             notificationsAdapterx = new SynopsisRecyclerAdapter(NotifListx);
             notificationList.setHasFixedSize(true);
             notificationList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

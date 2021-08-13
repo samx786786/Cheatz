@@ -17,6 +17,7 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
 
     public List<Mainpagemodel> mainList;
     public Context context;
+
     public MainpageRecyclerAdapter(List<Mainpagemodel> notifList) {
         this.mainList=notifList;
     }
@@ -51,12 +52,6 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
             }
         });
         holder.textview.setText(name);
-        holder.textview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
-            }
-        });
     }
 
     @Override

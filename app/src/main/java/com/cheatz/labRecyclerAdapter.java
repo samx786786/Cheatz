@@ -31,7 +31,7 @@ public class labRecyclerAdapter extends RecyclerView.Adapter<labRecyclerAdapter.
     public void onBindViewHolder(@NonNull labRecyclerAdapter.ViewHolder holder, int position) {
         String questionstring=mainList.get(position).getAnswer();
         String answerstring=mainList.get(position).getAnswer();
-        holder.textview.setText(questionstring+"\n"+answerstring);
+        holder.textview.setText("Q: "+questionstring+"\n"+"A: "+answerstring);
     }
 
     @Override

@@ -24,6 +24,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Lab extends AppCompatActivity {
 
     public static final String SHARED_PREFS = "sharedPrefs";
@@ -55,7 +56,7 @@ public class Lab extends AppCompatActivity {
             String subjectname = bundle1.get("subjectname").toString();
             title.setText("Viva Questions"+"\n"+subjectname);
             NotifListx = new ArrayList<>();
-            RecyclerView notificationList = findViewById(R.id.imporatantrecycleradapter);
+            RecyclerView notificationList = findViewById(R.id.vivaquestions);
             notificationsAdapterx = new labRecyclerAdapter(NotifListx);
             notificationList.setHasFixedSize(true);
             notificationList.setLayoutManager(new LinearLayoutManager(this));
@@ -71,6 +72,8 @@ public class Lab extends AppCompatActivity {
                     }
                 }
             });
+
+
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"lablinks").document("lablinks").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -78,7 +81,6 @@ public class Lab extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String recordurl = task.getResult().getString("Record");
                             String manualurl = task.getResult().getString("manual");
-
                             record.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -105,4 +107,6 @@ public class Lab extends AppCompatActivity {
             });
         }
     }
+
+
 }
