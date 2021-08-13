@@ -12,11 +12,28 @@
         android:textSize="@dimen/_16sdp"
         android:textColor="#FFF"
         android:id="@+id/vivatextview"
-        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
         android:textAlignment="textStart"
-        android:layout_marginStart="@dimen/_4sdp"
-        android:paddingStart="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
         app:layout_constraintTop_toTopOf="parent">
+    </TextView>
+
+
+    <TextView
+        android:id="@+id/vivatextview2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/_21sdp"
+        app:layout_constraintTop_toBottomOf="@+id/vivatextview">
     </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

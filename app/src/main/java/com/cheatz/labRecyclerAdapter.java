@@ -29,9 +29,10 @@ public class labRecyclerAdapter extends RecyclerView.Adapter<labRecyclerAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull labRecyclerAdapter.ViewHolder holder, int position) {
-        String questionstring=mainList.get(position).getAnswer();
+        String questionstring=mainList.get(position).getQuestion();
         String answerstring=mainList.get(position).getAnswer();
-        holder.textview.setText("Q: "+questionstring+"\n"+"A: "+answerstring);
+        holder.textview.setText("Q: "+questionstring);
+        holder.textview2.setText("A: "+answerstring);
     }
 
     @Override
@@ -40,12 +41,14 @@ public class labRecyclerAdapter extends RecyclerView.Adapter<labRecyclerAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textview;
+        TextView textview,textview2;
         View mView;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
             textview=mView.findViewById(R.id.vivatextview);
+            textview2=mView.findViewById(R.id.vivatextview2);
+
         }
     }
 }

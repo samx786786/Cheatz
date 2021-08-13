@@ -54,7 +54,7 @@ public class Lab extends AppCompatActivity {
         Bundle bundle1 = getIntent().getExtras();
         if (bundle1 != null) {
             String subjectname = bundle1.get("subjectname").toString();
-            title.setText("Viva Questions"+"\n"+subjectname);
+            title.setText("Viva Questions"+"\n"+subjectname+"\n");
             NotifListx = new ArrayList<>();
             RecyclerView notificationList = findViewById(R.id.vivaquestions);
             notificationsAdapterx = new labRecyclerAdapter(NotifListx);
@@ -62,7 +62,7 @@ public class Lab extends AppCompatActivity {
             notificationList.setLayoutManager(new LinearLayoutManager(this));
             notificationList.setAdapter(notificationsAdapterx);
             firestore = FirebaseFirestore.getInstance();
-            firestore.collection(branchname+subbranchname+sem+year+subjectname+"labviva").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+            firestore.collection(branchname+subbranchname+sem+year+subjectname+"lablinks").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
