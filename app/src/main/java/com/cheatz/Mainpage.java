@@ -50,7 +50,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView homeicon,toolicon,downloadicon,notesicon,questionbankicon,importantquestionicon,workflowicon,recycleicon;
+    ImageView homeicon,toolicon,notesicon,questionbankicon,importantquestionicon,workflowicon,recycleicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,6 @@ public class Mainpage extends AppCompatActivity {
         setContentView(R.layout.activity_mainpage);
         homeicon=findViewById(R.id.imageView2);
         toolicon=findViewById(R.id.imageView5);
-        downloadicon=findViewById(R.id.imageView6);
         notesicon=findViewById(R.id.imageView7);
         questionbankicon=findViewById(R.id.imageView8);
         importantquestionicon=findViewById(R.id.imageView9);
@@ -204,7 +203,6 @@ public class Mainpage extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
-                            String downloadurl = task.getResult().getString("downloadurl");
                             toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -219,13 +217,7 @@ public class Mainpage extends AppCompatActivity {
                                     startActivity(browserIntent);
                                 }
                             });
-                            downloadicon.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(downloadurl));
-                                    startActivity(browserIntent);
-                                }
-                            });
+
                         }
                     }
                 }
