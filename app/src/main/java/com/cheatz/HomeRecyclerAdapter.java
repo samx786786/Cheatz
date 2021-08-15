@@ -88,6 +88,14 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
                 holder.questionbank.setVisibility(View.INVISIBLE);
                 holder.youtube.setVisibility(View.INVISIBLE);
                 holder.lab.setVisibility(View.VISIBLE);
+                holder.lab.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Lab.class);
+                        Intent.putExtra("subjectname",subjectname);
+                        context.startActivity(Intent);
+                    }
+                });
                 holder.click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

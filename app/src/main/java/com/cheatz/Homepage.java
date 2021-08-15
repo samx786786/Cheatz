@@ -3,8 +3,11 @@ package com.cheatz;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.firestore.DocumentChange;
@@ -26,12 +29,37 @@ public class Homepage extends AppCompatActivity {
     private HomeRecyclerAdapter notificationsAdapterx;
     private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
+    ImageView helpicon,back;
+    CardView helpcard;
+    TextView cheatz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         title=findViewById(R.id.textView17);
+        helpicon=findViewById(R.id.imageView17);
+        helpcard=findViewById(R.id.helpcard);
+        cheatz=findViewById(R.id.textView19);
+        back=findViewById(R.id.imageView26);
+
+        helpicon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helpcard.setVisibility(View.VISIBLE);
+                cheatz.setVisibility(View.INVISIBLE);
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helpcard.setVisibility(View.GONE);
+                cheatz.setVisibility(View.VISIBLE);
+            }
+        });
+
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
@@ -80,4 +108,6 @@ public class Homepage extends AppCompatActivity {
             }
         });
     }
+
+
 }

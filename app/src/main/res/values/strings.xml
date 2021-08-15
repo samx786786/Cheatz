@@ -28,4 +28,6 @@
     <string name="address">Address</string>
     <string name="lab_manual">Lab Manual</string>
     <string name="lab_record">Lab Record</string>
+    <string name="quick_access_icons">Quick Access Icons</string>
+    <string name="tap_to_access_main_page">Tap To Access Main Page</string>
 </resources>

@@ -1,6 +1,9 @@
 package com.cheatz;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -8,6 +11,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.getkeepsafe.taptargetview.TapTarget;
+import com.getkeepsafe.taptargetview.TapTargetView;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,12 +29,15 @@ public class MainActivity extends AppCompatActivity {
     private List<branchmodel> NotifListx;
     FirebaseFirestore firestore;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         info=findViewById(R.id.imageView);
 
+        setOrientation(MainActivity.this);
         recycle=findViewById(R.id.imageView12);
         recycle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,5 +82,15 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+
+
+
+    private void setOrientation(MainActivity context) {
+        if (android.os.Build.VERSION.SDK_INT == Build.VERSION_CODES.O)
+        {
+            context.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 }
