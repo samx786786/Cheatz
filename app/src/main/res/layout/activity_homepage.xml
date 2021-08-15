@@ -55,13 +55,25 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="@dimen/_4sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/homepagerecyler"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_baseline_help_24" />
+
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_margin="@dimen/_16sdp"
         app:cardCornerRadius="@dimen/_16sdp"
         app:cardBackgroundColor="#000"
         android:id="@+id/helpcard"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -185,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                android:text="Help Info"
+                android:text="@string/help_info"
                 android:layout_marginTop="@dimen/_21sdp"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -221,16 +233,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_width="wrap_content"
-        android:layout_marginBottom="@dimen/_4sdp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/homepagerecyler"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_help_24" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
