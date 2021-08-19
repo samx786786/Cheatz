@@ -72,8 +72,7 @@ public class Lab extends AppCompatActivity {
                     }
                 }
             });
-
-
+            
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"lablinks").document("lablinks").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {

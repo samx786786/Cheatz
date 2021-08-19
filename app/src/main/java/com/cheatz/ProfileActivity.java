@@ -74,7 +74,6 @@ public class ProfileActivity extends AppCompatActivity {
            notificationList.setNestedScrollingEnabled(false);
            notificationList.setLayoutManager(new LinearLayoutManager(this));
            notificationList.setAdapter(notificationsAdapterx);
-           firestore = FirebaseFirestore.getInstance();
            firestore.collection(branchname+subbranch+year+"Sem").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {

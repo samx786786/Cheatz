@@ -2,7 +2,6 @@ package com.cheatz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -17,16 +16,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 
 public class Mainpage extends AppCompatActivity {
@@ -203,21 +199,23 @@ public class Mainpage extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
+
                             toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(toolsurl));
-                                    startActivity(browserIntent);
+                                   // Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(toolsurl));
+                                   // startActivity(browserIntent);
+                                    Toast.makeText(Mainpage.this, toolsurl, Toast.LENGTH_SHORT).show();
                                 }
                             });
                             notesicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
-                                    startActivity(browserIntent);
+                                   // Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
+                                   // startActivity(browserIntent);
+                                    Toast.makeText(Mainpage.this, notesurl, Toast.LENGTH_SHORT).show();
                                 }
                             });
-
                         }
                     }
                 }
@@ -227,8 +225,8 @@ public class Mainpage extends AppCompatActivity {
                     Toast.makeText(Mainpage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
-
         }
     }
+
 
 }

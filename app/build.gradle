@@ -52,11 +52,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.squareup.picasso:picasso:2.71828' //image loader
     implementation 'com.jsibbold:zoomage:1.3.1' // zoom in library
-    implementation 'com.github.gabrielemariotti.recyclerview:recyclerview-animators:0.3.0-SNAPSHOT@aar' // recycler fade animation
     implementation 'com.airbnb.android:lottie:3.4.4' // animation view
     implementation 'com.github.bumptech.glide:glide:4.12.0' //image loader
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //adaptive size library
-    implementation 'com.getkeepsafe.taptargetview:taptargetview:1.13.2'
 
 }
