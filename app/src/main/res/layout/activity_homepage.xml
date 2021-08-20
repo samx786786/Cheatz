@@ -8,10 +8,6 @@
     tools:context=".Homepage">
 
 
-
-
-
-
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="match_parent"

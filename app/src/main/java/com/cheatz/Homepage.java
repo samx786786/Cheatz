@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -32,6 +33,7 @@ public class Homepage extends AppCompatActivity {
     ImageView helpicon,back;
     CardView helpcard;
     TextView cheatz;
+    ProgressBar progressBar;
 
 
     @Override
@@ -43,7 +45,7 @@ public class Homepage extends AppCompatActivity {
         helpcard=findViewById(R.id.helpcard);
         cheatz=findViewById(R.id.textView19);
         back=findViewById(R.id.imageView26);
-
+        progressBar=findViewById(R.id.progressBar2);
         helpicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,7 +53,6 @@ public class Homepage extends AppCompatActivity {
                 cheatz.setVisibility(View.INVISIBLE);
             }
         });
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +60,6 @@ public class Homepage extends AppCompatActivity {
                 cheatz.setVisibility(View.VISIBLE);
             }
         });
-
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
@@ -90,6 +90,7 @@ public class Homepage extends AppCompatActivity {
             Intent intent = new Intent(Homepage.this, MainActivity.class);
             startActivity(intent);
         }
+        progressBar.setVisibility(View.VISIBLE);
         NotifListx = new ArrayList<>();
         RecyclerView notificationList = findViewById(R.id.homepagerecyler);
         notificationsAdapterx = new HomeRecyclerAdapter(NotifListx);
@@ -100,11 +101,14 @@ public class Homepage extends AppCompatActivity {
         firestore.collection(branchname+subbranchname+sem+year+"Subjects").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                progressBar.setVisibility(View.INVISIBLE);
                 for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                     Homemodel notifications = doc.getDocument().toObject(Homemodel.class);
                     NotifListx.add(notifications);
                     notificationsAdapterx.notifyDataSetChanged();
                 }
+
+
             }
         });
     }

@@ -2,6 +2,8 @@ package com.cheatz;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,6 +24,7 @@ public class ImportantActivity extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     FirebaseFirestore firestore;
+    ProgressBar progressBar;
     private SynopsisRecyclerAdapter notificationsAdapterx;
     private List<SynopsisModel> NotifListx;
     TextView title;
@@ -32,6 +35,8 @@ public class ImportantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_important);
         firestore = FirebaseFirestore.getInstance();
         title=findViewById(R.id.textView31);
+        progressBar=findViewById(R.id.progressBar3);
+        progressBar.setVisibility(View.VISIBLE);
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
         String subbranchname = sharedPreferences.getString(TEXT2, "");
@@ -52,6 +57,7 @@ public class ImportantActivity extends AppCompatActivity {
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Synopsis").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                    progressBar.setVisibility(View.INVISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         SynopsisModel notifications = doc.getDocument().toObject(SynopsisModel.class);
                         NotifListx.add(notifications);

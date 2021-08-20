@@ -63,6 +63,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_16sdp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar5"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            android:indeterminateTint="@color/white"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/vivaquestions"
+            app:layout_constraintEnd_toEndOf="@+id/vivaquestions"
+            app:layout_constraintStart_toStartOf="@+id/vivaquestions"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

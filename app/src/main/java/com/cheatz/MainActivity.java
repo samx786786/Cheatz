@@ -6,6 +6,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private branchselectrecycleradapter notificationsAdapterx;
     private List<branchmodel> NotifListx;
     FirebaseFirestore firestore;
+    ProgressBar progressBar;
+
 
 
 
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         info=findViewById(R.id.imageView);
-
+        progressBar=findViewById(R.id.progressBar4);
         setOrientation(MainActivity.this);
         recycle=findViewById(R.id.imageView12);
         recycle.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         NotifListx = new ArrayList<>();
+        progressBar.setVisibility(View.VISIBLE);
         RecyclerView notificationList = findViewById(R.id.homerecyler);
         notificationsAdapterx = new branchselectrecycleradapter(NotifListx);
         notificationList.setHasFixedSize(true);
@@ -72,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         firestore.collection("branch").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                progressBar.setVisibility(View.INVISIBLE);
                 for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                     branchmodel notifications = doc.getDocument().toObject(branchmodel.class);
                     NotifListx.add(notifications);
@@ -80,8 +85,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 
     private void setOrientation(MainActivity context) {

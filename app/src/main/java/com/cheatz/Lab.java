@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -37,11 +38,13 @@ public class Lab extends AppCompatActivity {
     FirebaseFirestore firestore;
     TextView title;
     ImageView record,manuel;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab);
+        progressBar=findViewById(R.id.progressBar5);
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
         String subbranchname = sharedPreferences.getString(TEXT2, "");
@@ -53,6 +56,7 @@ public class Lab extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         Bundle bundle1 = getIntent().getExtras();
         if (bundle1 != null) {
+            progressBar.setVisibility(View.VISIBLE);
             String subjectname = bundle1.get("subjectname").toString();
             title.setText("Viva Questions"+"\n"+subjectname+"\n");
             NotifListx = new ArrayList<>();
@@ -65,6 +69,7 @@ public class Lab extends AppCompatActivity {
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"lablinks").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                    progressBar.setVisibility(View.INVISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         labmodel notifications = doc.getDocument().toObject(labmodel.class);
                         NotifListx.add(notifications);
@@ -80,21 +85,20 @@ public class Lab extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String recordurl = task.getResult().getString("Record");
                             String manualurl = task.getResult().getString("manual");
-                            record.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(recordurl));
-                                    startActivity(browserIntent);
-                                }
-                            });
-
-                            manuel.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(manualurl));
-                                    startActivity(browserIntent);
-                                }
-                            });
+                                record.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(recordurl));
+                                        startActivity(browserIntent);
+                                    }
+                                });
+                                manuel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(manualurl));
+                                        startActivity(browserIntent);
+                                    }
+                                });
                         }
                     }
                 }
@@ -106,6 +110,4 @@ public class Lab extends AppCompatActivity {
             });
         }
     }
-
-
 }
