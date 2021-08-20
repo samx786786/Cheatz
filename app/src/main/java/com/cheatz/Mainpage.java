@@ -2,6 +2,7 @@ package com.cheatz;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -191,7 +192,6 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-            // logic error fix
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Tools").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -199,21 +199,18 @@ public class Mainpage extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
-
                             toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                   // Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(toolsurl));
-                                   // startActivity(browserIntent);
-                                    Toast.makeText(Mainpage.this, toolsurl, Toast.LENGTH_SHORT).show();
+                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(toolsurl));
+                                    startActivity(browserIntent);
                                 }
                             });
                             notesicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                   // Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
-                                   // startActivity(browserIntent);
-                                    Toast.makeText(Mainpage.this, notesurl, Toast.LENGTH_SHORT).show();
+                                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(notesurl));
+                                    startActivity(browserIntent);
                                 }
                             });
                         }
@@ -227,6 +224,4 @@ public class Mainpage extends AppCompatActivity {
             });
         }
     }
-
-
 }
