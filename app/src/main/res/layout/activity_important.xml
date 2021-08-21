@@ -8,7 +8,6 @@
     tools:context=".ImportantActivity">
 
     <ImageView
-        android:id="@+id/imageView28"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#000"
@@ -17,7 +16,6 @@
     </ImageView>
 
     <ImageView
-        android:id="@+id/imageView16"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
         android:layout_marginBottom="@dimen/_4sdp"

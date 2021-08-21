@@ -8,7 +8,6 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
         android:layout_width="@dimen/_126sdp"
         android:layout_height="@dimen/_217sdp"
         android:layout_margin="@dimen/_8sdp"
