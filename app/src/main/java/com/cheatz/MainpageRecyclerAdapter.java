@@ -2,12 +2,10 @@ package com.cheatz;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
@@ -33,9 +31,7 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
 
     @Override
     public void onBindViewHolder(@NonNull MainpageRecyclerAdapter.ViewHolder holder, int position) {
-        String youtubeurl=mainList.get(position).getYoutubeurl();
         String imageurl=mainList.get(position).getImageurl();
-        String name=mainList.get(position).getTopicname();
         Picasso.get().load(imageurl).into(holder.image);
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,13 +41,7 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
                 context.startActivity(Intent);
             }
         });
-        holder.youtube.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(youtubeurl)));
-            }
-        });
-        holder.textview.setText(name);
+
     }
 
     @Override
@@ -60,16 +50,15 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView textview;
-        ImageView youtube;
+
         View mView;
         ImageView image;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
-            textview=mView.findViewById(R.id.textView25);
+
             image=mView.findViewById(R.id.image);
-            youtube=mView.findViewById(R.id.imageButton2);
+
         }
     }
 }

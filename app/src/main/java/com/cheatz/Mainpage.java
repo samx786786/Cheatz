@@ -28,7 +28,7 @@ import java.util.List;
 
 public class Mainpage extends AppCompatActivity {
 
-    TextView title;
+
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT1 = "text";
     public static final String TEXT2 = "text2";
@@ -67,7 +67,6 @@ public class Mainpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        title=findViewById(R.id.textView17);
         homeicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -124,7 +123,6 @@ public class Mainpage extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
-            title.setText(branchname+"\n"+subbranchname+"\n"+sem+"\n"+year+"\n"+subjectname);
             questionbankicon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

@@ -30,36 +30,16 @@ public class Homepage extends AppCompatActivity {
     private HomeRecyclerAdapter notificationsAdapterx;
     private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
-    ImageView helpicon,back;
-    CardView helpcard;
     TextView cheatz;
     ProgressBar progressBar;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         title=findViewById(R.id.textView17);
-        helpicon=findViewById(R.id.imageView17);
-        helpcard=findViewById(R.id.helpcard);
         cheatz=findViewById(R.id.textView19);
-        back=findViewById(R.id.imageView26);
         progressBar=findViewById(R.id.progressBar2);
-        helpicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                helpcard.setVisibility(View.VISIBLE);
-                cheatz.setVisibility(View.INVISIBLE);
-            }
-        });
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                helpcard.setVisibility(View.GONE);
-                cheatz.setVisibility(View.VISIBLE);
-            }
-        });
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
