@@ -48,20 +48,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="30dp"
-            android:layout_height="29dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="@dimen/_16sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_recycling_24" />
-
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

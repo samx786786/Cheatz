@@ -47,7 +47,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView homeicon,toolicon,notesicon,questionbankicon,importantquestionicon,workflowicon,recycleicon;
+    ImageView homeicon,toolicon,notesicon,questionbankicon,importantquestionicon,workflowicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +59,6 @@ public class Mainpage extends AppCompatActivity {
         questionbankicon=findViewById(R.id.imageView8);
         importantquestionicon=findViewById(R.id.imageView9);
         workflowicon=findViewById(R.id.imageView10);
-        recycleicon=findViewById(R.id.imageView12);
-        recycleicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainpage.this,RecycleActivity.class);
-                startActivity(intent);
-            }
-        });
         homeicon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

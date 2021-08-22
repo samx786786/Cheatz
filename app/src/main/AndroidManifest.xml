@@ -15,14 +15,9 @@
             android:name=".ImportantActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".RecycleActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Searchengine"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Zoomimage"
-            android:screenOrientation="portrait" />
+        <activity android:name=".Zoomimage" />
         <activity
             android:name=".ProfileSavedataActivity"
             android:screenOrientation="portrait" />
@@ -53,7 +48,6 @@
         <activity
             android:name=".TestActivity"
             android:screenOrientation="portrait">
-
         </activity>
         <activity
             android:name=".MainActivity"
@@ -62,7 +56,7 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/purple_700"/>
-
+        
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">

@@ -21,15 +21,12 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView info,recycle;
+    ImageView info;
     TextView infotextview;
     private branchselectrecycleradapter notificationsAdapterx;
     private List<branchmodel> NotifListx;
     FirebaseFirestore firestore;
     ProgressBar progressBar;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,14 +35,6 @@ public class MainActivity extends AppCompatActivity {
         info=findViewById(R.id.imageView);
         progressBar=findViewById(R.id.progressBar4);
         setOrientation(MainActivity.this);
-        recycle=findViewById(R.id.imageView12);
-        recycle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RecycleActivity.class);
-                startActivity(intent);
-            }
-        });
 
         info.setOnClickListener(new View.OnClickListener() {
             @Override

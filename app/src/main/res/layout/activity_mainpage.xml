@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".Mainpage">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="@dimen/_50sdp"
@@ -104,29 +103,12 @@
             app:srcCompat="@drawable/ic_icon_metro_lab" />
 
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="@dimen/_21sdp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView11"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_baseline_recycling_24" />
-
-
-
-
-
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hunderprecentageconstrainlayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,8 +117,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/button2"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -187,8 +169,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewfifty"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/button2fifty"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -239,7 +221,7 @@
         android:id="@+id/passconstrainlayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
@@ -249,8 +231,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewpass"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/button2pass"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -288,5 +270,6 @@
             app:srcCompat="@drawable/right" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
