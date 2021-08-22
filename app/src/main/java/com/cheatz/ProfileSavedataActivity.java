@@ -29,7 +29,7 @@ import java.util.Map;
 public class ProfileSavedataActivity extends AppCompatActivity {
 
     ImageView info;
-    TextView infotextview,title,subranchx,semname;
+    TextView infotextview;
     ImageButton imageButton;
     private syllabusrecycleradapter notificationsAdapterx;
     private List<syllabusmodel> NotifListx;
@@ -47,9 +47,6 @@ public class ProfileSavedataActivity extends AppCompatActivity {
         firestore = FirebaseFirestore.getInstance();
         info=findViewById(R.id.imageView);
         imageButton=findViewById(R.id.imageButton4);
-        title=findViewById(R.id.textView20);
-        subranchx=findViewById(R.id.textView21);
-        semname=findViewById(R.id.textView2);
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,10 +69,6 @@ public class ProfileSavedataActivity extends AppCompatActivity {
             String year = bundle1.get("year").toString();
             String subbranch = bundle1.get("subbranch").toString();
             String sem = bundle1.get("sem").toString();
-            title.setText(branchname);
-            subranchx.setText(subbranch);
-            semname.setVisibility(View.VISIBLE);
-            semname.setText(sem+"\n"+year);
             NotifListx = new ArrayList<>();
             RecyclerView notificationList = findViewById(R.id.selectsemrecycler);
             notificationsAdapterx = new syllabusrecycleradapter(NotifListx);
