@@ -85,17 +85,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/imageButton4"
-                android:padding="@dimen/_8sdp"
-                android:layout_width="wrap_content"
+                android:layout_width="@dimen/_39sdp"
+                android:background="@drawable/whitecircle"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:background="@drawable/circle"
-                android:layout_height="wrap_content"
+                android:layout_height="@dimen/_39sdp"
+                android:scaleType="centerInside"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/right" />
+                app:srcCompat="@drawable/blackright" />
 
 
             <androidx.recyclerview.widget.RecyclerView
