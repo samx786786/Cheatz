@@ -33,7 +33,6 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     public void onBindViewHolder(@NonNull HomeRecyclerAdapter.ViewHolder holder, int position) {
         String subjectname=mainList.get(position).getSubjectname();
         holder.textview.setText(subjectname);
-
         holder.textview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

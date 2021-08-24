@@ -80,14 +80,11 @@ public class Selectorrecycleradapter extends RecyclerView.Adapter<Selectorrecycl
                     }
                 });
             }
-
             @Override
             public void onError(Exception e) {
                 holder.textview.setText(e.getMessage());
             }
         });
-
-
     }
 
     @Override

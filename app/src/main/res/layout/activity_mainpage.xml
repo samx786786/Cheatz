@@ -15,7 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent" >
 
 
-
         <ImageView
             android:id="@+id/imageView5"
             android:layout_width="@dimen/_30sdp"

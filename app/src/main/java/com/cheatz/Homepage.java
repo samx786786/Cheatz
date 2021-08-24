@@ -87,11 +87,7 @@ public class Homepage extends AppCompatActivity {
                     NotifListx.add(notifications);
                     notificationsAdapterx.notifyDataSetChanged();
                 }
-
-
             }
         });
     }
-
-
 }
