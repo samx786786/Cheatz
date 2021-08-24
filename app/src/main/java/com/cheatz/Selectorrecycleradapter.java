@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class Selectorrecycleradapter extends RecyclerView.Adapter<Selectorrecycleradapter.ViewHolder>  {
@@ -37,29 +39,55 @@ public class Selectorrecycleradapter extends RecyclerView.Adapter<Selectorrecycl
     @Override
     public void onBindViewHolder(@NonNull Selectorrecycleradapter.ViewHolder holder, int position) {
         String sem =mainList.get(position).getSem();
-        holder.textview.setText(sem);
-        holder.textview.setOnClickListener(new View.OnClickListener() {
+        String url=mainList.get(position).getImageurl();
+        holder.mView.setVisibility(View.GONE);
+        Picasso.get().load(url).into(holder.imageView, new Callback() {
             @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, ProfileSavedataActivity.class);
-                Intent.putExtra("branchname",branchnamex);
-                Intent.putExtra("subbranch",subbranchx);
-                Intent.putExtra("sem",sem);
-                Intent.putExtra("year",yearx);
-                context.startActivity(Intent);
+            public void onSuccess() {
+                holder.mView.setVisibility(View.VISIBLE);
+                holder.textview.setText(sem);
+                holder.textview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, ProfileSavedataActivity.class);
+                        Intent.putExtra("branchname",branchnamex);
+                        Intent.putExtra("subbranch",subbranchx);
+                        Intent.putExtra("sem",sem);
+                        Intent.putExtra("year",yearx);
+                        context.startActivity(Intent);
+                    }
+                });
+                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, ProfileSavedataActivity.class);
+                        Intent.putExtra("branchname",branchnamex);
+                        Intent.putExtra("subbranch",subbranchx);
+                        Intent.putExtra("sem",sem);
+                        Intent.putExtra("year",yearx);
+                        context.startActivity(Intent);
+                    }
+                });
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, ProfileSavedataActivity.class);
+                        Intent.putExtra("branchname",branchnamex);
+                        Intent.putExtra("subbranch",subbranchx);
+                        Intent.putExtra("sem",sem);
+                        Intent.putExtra("year",yearx);
+                        context.startActivity(Intent);
+                    }
+                });
+            }
+
+            @Override
+            public void onError(Exception e) {
+                holder.textview.setText(e.getMessage());
             }
         });
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, ProfileSavedataActivity.class);
-                Intent.putExtra("branchname",branchnamex);
-                Intent.putExtra("subbranch",subbranchx);
-                Intent.putExtra("sem",sem);
-                Intent.putExtra("year",yearx);
-                context.startActivity(Intent);
-            }
-        });
+
+
     }
 
     @Override

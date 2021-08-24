@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Cheatz</string>
     <string name="about">info</string>
-    <string name="profile">Profile</string>
     <string name="info">info</string>
     <string name="education_made_easy_enabling">Cheatz Enabling</string>
     <string name="student_access_of_various">Student Access Of Various</string>
@@ -18,13 +17,7 @@
     <string name="model_paper">Model paper</string>
     <string name="study_material">Study Material</string>
     <string name="let_me_help_you">Let me help you</string>
-    <string name="recycle_your_old_books">Recycle Your Old books, Study Material, Notes , Question paper , Model paper ,News Papers</string>
-    <string name="recycle">Recycle</string>
-    <string name="we_will_reach_you_during_weekend_to_collect_the_items_thank_you">We Will Reach You During Weekend To Collect the items, Thank You..</string>
     <string name="_50">50 +</string>
     <string name="important_synopsis">Important Synopsis</string>
-    <string name="contact">Contact</string>
-    <string name="your_name">Your Name</string>
-    <string name="address">Address</string>
     <string name="easy">Easy</string>
 </resources>

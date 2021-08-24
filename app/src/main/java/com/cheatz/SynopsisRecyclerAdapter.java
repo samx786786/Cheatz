@@ -6,8 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
@@ -31,13 +35,21 @@ public class SynopsisRecyclerAdapter extends RecyclerView.Adapter<SynopsisRecycl
     @Override
     public void onBindViewHolder(@NonNull SynopsisRecyclerAdapter.ViewHolder holder, int position) {
         String url=mainList.get(position).getUrl();
-        Picasso.get().load(url).into(holder.imageView);
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        Picasso.get().load(url).into(holder.imageView, new Callback() {
             @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Zoomimage.class);
-                Intent.putExtra("imageurl",url);
-                context.startActivity(Intent);
+            public void onSuccess() {
+                holder.imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Zoomimage.class);
+                        Intent.putExtra("imageurl",url);
+                        context.startActivity(Intent);
+                    }
+                });
+            }
+            @Override
+            public void onError(Exception e) {
+                Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -14,9 +14,6 @@
         <activity
             android:name=".ImportantActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Searchengine"
-            android:screenOrientation="portrait" />
         <activity android:name=".Zoomimage" />
         <activity
             android:name=".ProfileSavedataActivity"

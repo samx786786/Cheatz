@@ -21,7 +21,6 @@
     <androidx.appcompat.widget.AppCompatImageView
         android:layout_width="match_parent"
         android:scaleType="centerCrop"
-        android:id="@+id/background2"
         android:background="@drawable/blurbg"
         android:layout_height="match_parent">
     </androidx.appcompat.widget.AppCompatImageView>
