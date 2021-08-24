@@ -9,7 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class branchselectrecycleradapter  extends RecyclerView.Adapter<branchselectrecycleradapter.ViewHolder> {
@@ -36,17 +37,28 @@ public class branchselectrecycleradapter  extends RecyclerView.Adapter<branchsel
         String moduels=mainList.get(position).getModuels();
         String year=mainList.get(position).getYear();
         String subbranch=mainList.get(position).getSubbranch();
-        Glide.with(context).load(backgroundpic).thumbnail(0.25f).into(holder.background);
-        holder.textview.setText(branchname+"\n"+subbranch+"\n"+year);
-        holder.mView.setOnClickListener(new View.OnClickListener() {
+        holder.mView.setVisibility(View.GONE);
+        Picasso.get().load(backgroundpic).into(holder.background, new Callback() {
             @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, ProfileActivity.class);
-                Intent.putExtra("branchname",branchname);
-                Intent.putExtra("subbranch",subbranch);
-                Intent.putExtra("moduels",moduels);
-                Intent.putExtra("year",year);
-                context.startActivity(Intent);
+            public void onSuccess() {
+                holder.mView.setVisibility(View.VISIBLE);
+                holder.textview.setText(branchname+"\n"+subbranch+"\n"+year);
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, ProfileActivity.class);
+                        Intent.putExtra("branchname",branchname);
+                        Intent.putExtra("subbranch",subbranch);
+                        Intent.putExtra("moduels",moduels);
+                        Intent.putExtra("year",year);
+                        context.startActivity(Intent);
+
+                    }
+                });
+            }
+            @Override
+            public void onError(Exception e) {
+                holder.textview.setText(e.getMessage());
             }
         });
     }
@@ -60,11 +72,13 @@ public class branchselectrecycleradapter  extends RecyclerView.Adapter<branchsel
         ImageView background;
         TextView textview;
         View mView;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
             background=mView.findViewById(R.id.background);
             textview=mView.findViewById(R.id.textView3);
+
         }
     }
 }

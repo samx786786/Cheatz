@@ -14,15 +14,7 @@
         android:background="@drawable/buttonbg"
         app:layout_constraintEnd_toEndOf="parent" >
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="@dimen/_34sdp"
-            android:layout_height="@dimen/_34sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="@dimen/_28sdp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/home" />
+
 
         <ImageView
             android:id="@+id/imageView5"
@@ -85,22 +77,35 @@
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView9"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_metro_flow_tree" />
+            app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
 
         <ImageView
             android:id="@+id/imageView11"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="16dp"
-            android:visibility="gone"
+            android:visibility="visible"
             android:layout_marginBottom="@dimen/_21sdp"
             app:layout_constraintBottom_toTopOf="@+id/imageView10"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/ic_icon_metro_lab" />
+            app:srcCompat="@drawable/ic_icon_awesome_youtube" />
+
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginEnd="16dp"
+            android:visibility="visible"
+            android:layout_marginBottom="@dimen/_21sdp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_icon_awesome_trophy" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

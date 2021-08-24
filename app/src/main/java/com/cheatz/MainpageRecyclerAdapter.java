@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 
@@ -33,6 +35,7 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
     public void onBindViewHolder(@NonNull MainpageRecyclerAdapter.ViewHolder holder, int position) {
         String imageurl=mainList.get(position).getImageurl();
         Picasso.get().load(imageurl).into(holder.image);
+
         holder.image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

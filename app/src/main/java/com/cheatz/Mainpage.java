@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,31 +46,25 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView homeicon,toolicon,notesicon,questionbankicon,importantquestionicon,workflowicon;
+    ImageView toolicon,notesicon,questionbankicon,importantquestionicon,clouddownloadicon,youtubeicon,competationicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
-        homeicon=findViewById(R.id.imageView2);
         toolicon=findViewById(R.id.imageView5);
         notesicon=findViewById(R.id.imageView7);
         questionbankicon=findViewById(R.id.imageView8);
         importantquestionicon=findViewById(R.id.imageView9);
-        workflowicon=findViewById(R.id.imageView10);
-        homeicon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Mainpage.this,Homepage.class);
-                startActivity(intent);
-            }
-        });
         Constrainlayouthundered=findViewById(R.id.hunderprecentageconstrainlayout);
         arrowhundred=findViewById(R.id.imageView3);
         Constanlayoutfifityplus=findViewById(R.id.fiftyconstrainlayout);
         arrowrightfifty=findViewById(R.id.imageView4fifty);
         arrowleftfifity=findViewById(R.id.imageView3fifty);
         Constrainlayoutpass=findViewById(R.id.passconstrainlayout);
+        clouddownloadicon=findViewById(R.id.imageView10);
+        youtubeicon=findViewById(R.id.imageView11);
+        competationicon=findViewById(R.id.imageView12);
         arrowpass=findViewById(R.id.imageView4pass);
         arrowhundred.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +182,8 @@ public class Mainpage extends AppCompatActivity {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
                             String toolsurl = task.getResult().getString("toolsurl");
+                            String youtubeurl = task.getResult().getString("youtubeurl");
+                            String downloadurl = task.getResult().getString("downloadurl");
                             toolicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
