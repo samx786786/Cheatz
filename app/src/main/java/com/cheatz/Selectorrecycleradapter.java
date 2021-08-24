@@ -40,11 +40,9 @@ public class Selectorrecycleradapter extends RecyclerView.Adapter<Selectorrecycl
     public void onBindViewHolder(@NonNull Selectorrecycleradapter.ViewHolder holder, int position) {
         String sem =mainList.get(position).getSem();
         String url=mainList.get(position).getImageurl();
-        holder.mView.setVisibility(View.GONE);
         Picasso.get().load(url).into(holder.imageView, new Callback() {
             @Override
             public void onSuccess() {
-                holder.mView.setVisibility(View.VISIBLE);
                 holder.textview.setText(sem);
                 holder.textview.setOnClickListener(new View.OnClickListener() {
                     @Override

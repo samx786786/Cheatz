@@ -7,7 +7,6 @@ public class Selectormodel {
 
     public Selectormodel(){}
 
-
     public Selectormodel(String sem, String imageurl) {
         this.sem = sem;
         this.imageurl = imageurl;

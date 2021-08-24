@@ -13,10 +13,10 @@ import java.util.List;
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
-    public List<Homemodel> mainList;
+    public List<syllabusmodel> mainList;
     public Context context;
 
-    public HomeRecyclerAdapter(List<Homemodel> notifList) {
+    public HomeRecyclerAdapter(List<syllabusmodel> notifList) {
         this.mainList=notifList;
     }
 
@@ -31,7 +31,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull HomeRecyclerAdapter.ViewHolder holder, int position) {
-        String subjectname=mainList.get(position).getSubjectname();
+        String subjectname=mainList.get(position).getSyllabus();
         holder.textview.setText(subjectname);
         holder.textview.setOnClickListener(new View.OnClickListener() {
             @Override

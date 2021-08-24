@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.firebase.firestore.DocumentChange;
@@ -28,7 +26,7 @@ public class Homepage extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     private HomeRecyclerAdapter notificationsAdapterx;
-    private List<Homemodel> NotifListx;
+    private List<syllabusmodel> NotifListx;
     FirebaseFirestore firestore;
     TextView cheatz;
     ProgressBar progressBar;
@@ -78,12 +76,12 @@ public class Homepage extends AppCompatActivity {
         notificationList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         notificationList.setAdapter(notificationsAdapterx);
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection(branchname+subbranchname+sem+year+"Subjects").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+        firestore.collection(branchname+subbranchname+year+sem+"syllabus").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
                 progressBar.setVisibility(View.INVISIBLE);
                 for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
-                    Homemodel notifications = doc.getDocument().toObject(Homemodel.class);
+                    syllabusmodel notifications = doc.getDocument().toObject(syllabusmodel.class);
                     NotifListx.add(notifications);
                     notificationsAdapterx.notifyDataSetChanged();
                 }

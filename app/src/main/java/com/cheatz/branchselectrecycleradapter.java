@@ -37,11 +37,10 @@ public class branchselectrecycleradapter  extends RecyclerView.Adapter<branchsel
         String moduels=mainList.get(position).getModuels();
         String year=mainList.get(position).getYear();
         String subbranch=mainList.get(position).getSubbranch();
-        holder.mView.setVisibility(View.GONE);
+
         Picasso.get().load(backgroundpic).into(holder.background, new Callback() {
             @Override
             public void onSuccess() {
-                holder.mView.setVisibility(View.VISIBLE);
                 holder.textview.setText(branchname+"\n"+subbranch+"\n"+year);
                 holder.mView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -52,7 +51,18 @@ public class branchselectrecycleradapter  extends RecyclerView.Adapter<branchsel
                         Intent.putExtra("moduels",moduels);
                         Intent.putExtra("year",year);
                         context.startActivity(Intent);
+                    }
+                });
 
+                holder.background.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, ProfileActivity.class);
+                        Intent.putExtra("branchname",branchname);
+                        Intent.putExtra("subbranch",subbranch);
+                        Intent.putExtra("moduels",moduels);
+                        Intent.putExtra("year",year);
+                        context.startActivity(Intent);
                     }
                 });
             }
