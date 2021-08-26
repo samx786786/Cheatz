@@ -46,7 +46,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView toolicon,notesicon,questionbankicon,importantquestionicon,clouddownloadicon,youtubeicon,competationicon;
+    ImageView toolicon,notesicon,questionbankicon,importantquestionicon,clouddownloadicon,youtubeicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,6 @@ public class Mainpage extends AppCompatActivity {
         Constrainlayoutpass=findViewById(R.id.passconstrainlayout);
         clouddownloadicon=findViewById(R.id.imageView10);
         youtubeicon=findViewById(R.id.imageView11);
-        competationicon=findViewById(R.id.imageView12);
         arrowpass=findViewById(R.id.imageView4pass);
         arrowhundred.setOnClickListener(new View.OnClickListener() {
             @Override

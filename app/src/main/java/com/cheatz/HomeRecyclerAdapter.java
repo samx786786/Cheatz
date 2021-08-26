@@ -9,14 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import com.squareup.picasso.Callback;
+import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.ViewHolder> {
 
-    public List<syllabusmodel> mainList;
+    public List<Homemodel> mainList;
     public Context context;
 
-    public HomeRecyclerAdapter(List<syllabusmodel> notifList) {
+    public HomeRecyclerAdapter(List<Homemodel> notifList) {
         this.mainList=notifList;
     }
 
@@ -31,25 +33,46 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull HomeRecyclerAdapter.ViewHolder holder, int position) {
-        String subjectname=mainList.get(position).getSyllabus();
-        holder.textview.setText(subjectname);
-        holder.textview.setOnClickListener(new View.OnClickListener() {
+        String subjectname=mainList.get(position).getSubjectname();
+        String url=mainList.get(position).getBackgroundurl();
+
+
+        Picasso.get().load(url).into(holder.background, new Callback() {
             @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Mainpage.class);
-                Intent.putExtra("subjectname",subjectname);
-                context.startActivity(Intent);
+            public void onSuccess() {
+                holder.textview.setText(subjectname);
+                holder.textview.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Mainpage.class);
+                        Intent.putExtra("subjectname",subjectname);
+                        context.startActivity(Intent);
+                    }
+                });
+                holder.background.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Mainpage.class);
+                        Intent.putExtra("subjectname",subjectname);
+                        context.startActivity(Intent);
+                    }
+                });
+                holder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent Intent = new Intent(context, Mainpage.class);
+                        Intent.putExtra("subjectname",subjectname);
+                        context.startActivity(Intent);
+                    }
+                });
+            }
+
+            @Override
+            public void onError(Exception e) {
+                holder.textview.setText(e.getMessage());
             }
         });
 
-        holder.click.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent Intent = new Intent(context, Mainpage.class);
-                Intent.putExtra("subjectname",subjectname);
-                context.startActivity(Intent);
-            }
-        });
     }
 
     @Override
@@ -60,13 +83,14 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView textview;
         View mView;
-        ImageView click;
+        ImageView background;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
-            click=mView.findViewById(R.id.click);
-            textview=mView.findViewById(R.id.textView6);
+            textview=mView.findViewById(R.id.textView3);
+            background=mView.findViewById(R.id.background);
         }
     }
 }

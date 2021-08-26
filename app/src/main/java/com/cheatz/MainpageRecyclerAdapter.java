@@ -56,7 +56,6 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
                     }
                 });
             }
-
             @Override
             public void onError(Exception e) {
                 Toast.makeText(context, e.getMessage(), Toast.LENGTH_LONG).show();
@@ -77,9 +76,7 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
-
             image=mView.findViewById(R.id.image);
-
         }
     }
 }

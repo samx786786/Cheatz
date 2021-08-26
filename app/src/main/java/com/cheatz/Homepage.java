@@ -26,7 +26,7 @@ public class Homepage extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     private HomeRecyclerAdapter notificationsAdapterx;
-    private List<syllabusmodel> NotifListx;
+    private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
     TextView cheatz;
     ProgressBar progressBar;
@@ -73,15 +73,15 @@ public class Homepage extends AppCompatActivity {
         RecyclerView notificationList = findViewById(R.id.homepagerecyler);
         notificationsAdapterx = new HomeRecyclerAdapter(NotifListx);
         notificationList.setHasFixedSize(true);
-        notificationList.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        notificationList.setLayoutManager(new LinearLayoutManager(this));
         notificationList.setAdapter(notificationsAdapterx);
         firestore = FirebaseFirestore.getInstance();
-        firestore.collection(branchname+subbranchname+year+sem+"syllabus").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+        firestore.collection(branchname+subbranchname+year+sem+"subjects").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
                 progressBar.setVisibility(View.INVISIBLE);
                 for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
-                    syllabusmodel notifications = doc.getDocument().toObject(syllabusmodel.class);
+                    Homemodel notifications = doc.getDocument().toObject(Homemodel.class);
                     NotifListx.add(notifications);
                     notificationsAdapterx.notifyDataSetChanged();
                 }
