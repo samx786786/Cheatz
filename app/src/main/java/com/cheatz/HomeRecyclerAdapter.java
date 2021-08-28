@@ -26,7 +26,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     @NonNull
     @Override
     public HomeRecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.homelayout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mainlayout, parent, false);
         context = parent.getContext();
         return new HomeRecyclerAdapter.ViewHolder(view);
     }
@@ -35,8 +35,6 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     public void onBindViewHolder(@NonNull HomeRecyclerAdapter.ViewHolder holder, int position) {
         String subjectname=mainList.get(position).getSubjectname();
         String url=mainList.get(position).getBackgroundurl();
-
-
         Picasso.get().load(url).into(holder.background, new Callback() {
             @Override
             public void onSuccess() {
