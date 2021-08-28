@@ -54,7 +54,7 @@ public class Questionbank extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
-            title.setText(branchname+"\n"+subbranchname+"\n"+sem+"\n"+year+"\n"+subjectname);
+            title.setText(subjectname);
             NotifListx = new ArrayList<>();
             RecyclerView notificationList = findViewById(R.id.importantquetion);
             notificationsAdapterx = new ImportantRecyclerAdapter(NotifListx);

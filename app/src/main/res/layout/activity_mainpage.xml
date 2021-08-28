@@ -184,7 +184,7 @@
         android:id="@+id/constraintLayout4"
         android:layout_width="@dimen/_50sdp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
         android:background="@drawable/mainlayoutminibg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
