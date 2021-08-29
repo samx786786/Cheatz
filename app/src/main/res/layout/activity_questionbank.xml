@@ -7,36 +7,19 @@
     android:layout_height="match_parent"
     tools:context=".Questionbank">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:background="#000"
-        app:srcCompat="@drawable/background1"
-        android:scaleType="centerCrop"
-        android:layout_height="match_parent">
-    </ImageView>
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_icon_awesome_question" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_8sdp"
-        android:textSize="@dimen/_16sdp"
         android:textAlignment="textStart"
         android:textAllCaps="false"
+        android:layout_marginTop="@dimen/_8sdp"
         android:textColor="#FFF"
+        android:textSize="@dimen/_16sdp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <HorizontalScrollView
@@ -44,7 +27,7 @@
         android:layout_width="0dp"
         android:scrollbarSize="0.1dp"
         android:layout_height="@dimen/_167sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14">
@@ -128,7 +111,7 @@
         android:textColor="#FFF"
         android:textSize="@dimen/_16sdp"
         android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 

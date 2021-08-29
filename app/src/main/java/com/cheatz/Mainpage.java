@@ -178,14 +178,15 @@ public class Mainpage extends AppCompatActivity {
                 }
             });
 
-           // uploaddata(branchname,subbranchname,sem,year,subjectname);
+            // uploaddata(branchname,subbranchname,sem,year,subjectname);
+            //  uploadurl(branchname,subbranchname,sem,year,subjectname);
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Tools").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     if (task.isSuccessful()) {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
-                            String youtubeurl = task.getResult().getString("youtubeurl");
+                            String youtubeurlz = task.getResult().getString("youtubeurl");
                             notesicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -193,7 +194,14 @@ public class Mainpage extends AppCompatActivity {
                                     startActivity(browserIntent);
                                 }
                             });
-
+                            youtubeicon.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                   // Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + youtubeurl));
+                                  //  startActivity(webIntent);
+                                    Toast.makeText(Mainpage.this, youtubeurlz, Toast.LENGTH_SHORT).show();
+                                }
+                            });
                         }
                     }
                 }
@@ -206,6 +214,17 @@ public class Mainpage extends AppCompatActivity {
         }
     }
 
+    private void uploadurl(String branchname, String subbranchname, String sem, String year, String subjectname) {
+        Map<String, String> userMap = new HashMap<>();
+        userMap.put("notesurl","https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf");
+        userMap.put("youtubeurl","https://www.youtube.com/results?search_query=thermodynamics");
+        firestore.collection(branchname+subbranchname+sem+year+subjectname+"Tools").document("tools").set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(Mainpage.this, "Task Completed", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
     private void uploaddata(String branchname, String subbranchname, String sem, String year, String subjectname) {
 
 

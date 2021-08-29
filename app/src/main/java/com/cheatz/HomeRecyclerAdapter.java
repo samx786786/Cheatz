@@ -35,34 +35,67 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
     public void onBindViewHolder(@NonNull HomeRecyclerAdapter.ViewHolder holder, int position) {
         String subjectname=mainList.get(position).getSubjectname();
         String url=mainList.get(position).getBackgroundurl();
+        String functionintent=mainList.get(position).getIntent();
         Picasso.get().load(url).into(holder.background, new Callback() {
             @Override
             public void onSuccess() {
                 holder.textview.setText(subjectname);
-                holder.textview.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent Intent = new Intent(context, Mainpage.class);
-                        Intent.putExtra("subjectname",subjectname);
-                        context.startActivity(Intent);
-                    }
-                });
-                holder.background.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent Intent = new Intent(context, Mainpage.class);
-                        Intent.putExtra("subjectname",subjectname);
-                        context.startActivity(Intent);
-                    }
-                });
-                holder.mView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent Intent = new Intent(context, Mainpage.class);
-                        Intent.putExtra("subjectname",subjectname);
-                        context.startActivity(Intent);
-                    }
-                });
+                if(functionintent.equals("lab"))
+                {
+                    holder.textview.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Lab.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+                    holder.background.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Lab.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Lab.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+
+                }
+                else
+                {
+                    holder.textview.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Mainpage.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+                    holder.background.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Mainpage.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+                    holder.mView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent Intent = new Intent(context, Mainpage.class);
+                            Intent.putExtra("subjectname",subjectname);
+                            context.startActivity(Intent);
+                        }
+                    });
+
+                }
             }
 
             @Override

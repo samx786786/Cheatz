@@ -4,12 +4,14 @@ public class Homemodel {
 
     String subjectname;
     String backgroundurl;
+    String intent;
 
     public Homemodel(){}
 
-    public Homemodel(String subjectname, String backgroundurl) {
+    public Homemodel(String subjectname, String backgroundurl, String intent) {
         this.subjectname = subjectname;
         this.backgroundurl = backgroundurl;
+        this.intent = intent;
     }
 
     public String getSubjectname() {
@@ -28,4 +30,11 @@ public class Homemodel {
         this.backgroundurl = backgroundurl;
     }
 
+    public String getIntent() {
+        return intent;
+    }
+
+    public void setIntent(String intent) {
+        this.intent = intent;
+    }
 }
