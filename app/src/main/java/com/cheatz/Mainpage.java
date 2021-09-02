@@ -49,7 +49,7 @@ public class Mainpage extends AppCompatActivity {
     ImageView arrowrightfifty,arrowleftfifity;
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
-    ImageView notesicon,questionbankicon,importantquestionicon,youtubeicon;
+    ImageView notesicon,questionbankicon,importantquestionicon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,6 @@ public class Mainpage extends AppCompatActivity {
         arrowrightfifty=findViewById(R.id.imageView4fifty);
         arrowleftfifity=findViewById(R.id.imageView3fifty);
         Constrainlayoutpass=findViewById(R.id.passconstrainlayout);
-        youtubeicon=findViewById(R.id.imageView6);
         arrowpass=findViewById(R.id.imageView4pass);
         arrowhundred.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,7 +185,6 @@ public class Mainpage extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         if (task.getResult().exists()) {
                             String notesurl = task.getResult().getString("notesurl");
-                            String youtubeurlz = task.getResult().getString("youtubeurl");
                             notesicon.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -194,14 +192,7 @@ public class Mainpage extends AppCompatActivity {
                                     startActivity(browserIntent);
                                 }
                             });
-                            youtubeicon.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                   // Intent webIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=" + youtubeurl));
-                                  //  startActivity(webIntent);
-                                    Toast.makeText(Mainpage.this, youtubeurlz, Toast.LENGTH_SHORT).show();
-                                }
-                            });
+
                         }
                     }
                 }
@@ -217,7 +208,6 @@ public class Mainpage extends AppCompatActivity {
     private void uploadurl(String branchname, String subbranchname, String sem, String year, String subjectname) {
         Map<String, String> userMap = new HashMap<>();
         userMap.put("notesurl","https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf");
-        userMap.put("youtubeurl","https://www.youtube.com/results?search_query=thermodynamics");
         firestore.collection(branchname+subbranchname+sem+year+subjectname+"Tools").document("tools").set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

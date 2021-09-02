@@ -213,15 +213,7 @@
             app:srcCompat="@drawable/ic_icon_awesome_square_root_alt" />
 
 
-        <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:layout_marginTop="@dimen/_18sdp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView5"
-            app:srcCompat="@drawable/ic_icon_awesome_youtube" />
+
 
 
         <ImageView
@@ -233,7 +225,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
             app:srcCompat="@drawable/ic_baseline_create_24" />
 
 
