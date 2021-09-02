@@ -30,7 +30,6 @@ import java.util.Map;
 public class Questionbank extends AppCompatActivity {
 
 
-    TextView title;
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT1 = "text";
     public static final String TEXT2 = "text2";
@@ -46,7 +45,6 @@ public class Questionbank extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_questionbank);
-        title=findViewById(R.id.textView14);
         firestore = FirebaseFirestore.getInstance();
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
