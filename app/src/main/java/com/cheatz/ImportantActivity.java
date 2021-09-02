@@ -31,7 +31,6 @@ public class ImportantActivity extends AppCompatActivity {
     private SynopsisRecyclerAdapter notificationsAdapterx;
     private List<SynopsisModel> NotifListx;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +66,6 @@ public class ImportantActivity extends AppCompatActivity {
             });
         }
     }
-
     private void uploaddata(String branchname, String subbranchname, String sem, String year, String subjectname) {
 
         Map<String, String> userMapy1 = new HashMap<>();

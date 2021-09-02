@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -39,6 +40,7 @@ public class Questionbank extends AppCompatActivity {
     private SynopsisRecyclerAdapter notificationsAdapterx;
     private List<SynopsisModel> NotifListx;
     FirebaseFirestore firestore;
+    ProgressBar progressBar;
 
 
     @Override
@@ -51,11 +53,12 @@ public class Questionbank extends AppCompatActivity {
         String subbranchname = sharedPreferences.getString(TEXT2, "");
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
+        progressBar=findViewById(R.id.progressBar3);
         Bundle bundle1 = getIntent().getExtras();
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
-
+            progressBar.setVisibility(View.VISIBLE);
            // uploaddata(branchname,subbranchname,sem,year,subjectname);
            // uploadurl(branchname,subbranchname,sem,year,subjectname);
             NotifListx = new ArrayList<>();
@@ -68,6 +71,7 @@ public class Questionbank extends AppCompatActivity {
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"ImportantQuestion").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
+                    progressBar.setVisibility(View.INVISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         SynopsisModel notifications = doc.getDocument().toObject(SynopsisModel.class);
                         NotifListx.add(notifications);

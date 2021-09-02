@@ -8,8 +8,8 @@
         android:layout_width="match_parent"
         android:id="@+id/image"
         android:background="#000000"
-        android:layout_marginBottom="@dimen/_4sdp"
         android:scaleType="centerCrop"
+        android:layout_marginBottom="@dimen/_4sdp"
         android:layout_height="match_parent">
     </ImageView>
 
