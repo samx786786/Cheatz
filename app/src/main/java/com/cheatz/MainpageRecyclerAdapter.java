@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -34,11 +35,11 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
     @Override
     public void onBindViewHolder(@NonNull MainpageRecyclerAdapter.ViewHolder holder, int position) {
         String imageurl=mainList.get(position).getImageurl();
-        holder.mView.setVisibility(View.GONE);
+        holder.loding.setVisibility(View.VISIBLE);
         Picasso.get().load(imageurl).into(holder.image, new Callback() {
             @Override
             public void onSuccess() {
-                holder.mView.setVisibility(View.VISIBLE);
+               holder.loding.setVisibility(View.INVISIBLE);
                 holder.image.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -73,9 +74,11 @@ public class MainpageRecyclerAdapter extends RecyclerView.Adapter<MainpageRecycl
 
         View mView;
         ImageView image;
+        TextView loding;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mView=itemView;
+            loding=mView.findViewById(R.id.textView6);
             image=mView.findViewById(R.id.image);
         }
     }

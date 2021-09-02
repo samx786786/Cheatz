@@ -51,15 +51,13 @@ public class Mainpage extends AppCompatActivity {
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
     ImageView notesicon,questionbankicon,importantquestionicon;
-    ProgressBar progresspass,progressfifty,progresshundred;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
-        progresspass=findViewById(R.id.progressBar8);
-        progresshundred=findViewById(R.id.progressBar6);
-        progressfifty=findViewById(R.id.progressBar7);
+
         notesicon=findViewById(R.id.imageView7);
         questionbankicon=findViewById(R.id.imageView4);
         importantquestionicon=findViewById(R.id.imageView5);
@@ -136,11 +134,9 @@ public class Mainpage extends AppCompatActivity {
             notificationList.setLayoutManager(new LinearLayoutManager(this));
             notificationList.setAdapter(notificationsAdapterx);
             firestore = FirebaseFirestore.getInstance();
-            progresshundred.setVisibility(View.VISIBLE);
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"100").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                    progresshundred.setVisibility(View.INVISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         Mainpagemodel notifications = doc.getDocument().toObject(Mainpagemodel.class);
                         NotifListx.add(notifications);
@@ -148,7 +144,6 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-            progressfifty.setVisibility(View.VISIBLE);
             NotifListy = new ArrayList<>();
             RecyclerView notificationList3 = findViewById(R.id.recyclerViewfifty);
             notificationsAdaptery = new MainpageRecyclerAdapter(NotifListy);
@@ -159,7 +154,6 @@ public class Mainpage extends AppCompatActivity {
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"50+").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                    progressfifty.setVisibility(View.INVISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         Mainpagemodel notifications = doc.getDocument().toObject(Mainpagemodel.class);
                         NotifListy.add(notifications);
@@ -167,7 +161,7 @@ public class Mainpage extends AppCompatActivity {
                     }
                 }
             });
-            progresspass.setVisibility(View.VISIBLE);
+
             NotifListz = new ArrayList<>();
             RecyclerView notificationList2 = findViewById(R.id.recyclerViewpass);
             notificationsAdapterz = new MainpageRecyclerAdapter(NotifListz);
@@ -178,7 +172,6 @@ public class Mainpage extends AppCompatActivity {
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"pass").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-                    progresspass.setVisibility(View.VISIBLE);
                     for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
                         Mainpagemodel notifications = doc.getDocument().toObject(Mainpagemodel.class);
                         NotifListz.add(notifications);

@@ -15,36 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:background="@drawable/importantlayoutbg"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="10dp">
-
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="0dp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/_16sdp"
-            android:textAlignment="center"
-            android:textAllCaps="false"
-            android:textColor="#FFF"
-            android:layout_marginBottom="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:maxLines="1"
-            android:text="@string/important_questions"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <HorizontalScrollView
@@ -52,10 +22,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scrollbarSize="0.00001dp"
-        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -80,6 +50,7 @@
                 android:textColor="#FFF">
             </androidx.appcompat.widget.AppCompatButton>
 
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/modelpaper"
                 android:layout_width="wrap_content"
@@ -97,7 +68,6 @@
                 android:textAlignment="center"
                 android:textColor="#FFF">
             </androidx.appcompat.widget.AppCompatButton>
-
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/questionpaper"
@@ -137,15 +107,5 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:visibility="gone"
-        android:indeterminateTint="@color/white"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/importantquetion"
-        app:layout_constraintTop_toTopOf="@+id/importantquetion" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
