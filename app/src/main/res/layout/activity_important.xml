@@ -48,4 +48,99 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/_1sdp"
+        android:layout_height="wrap_content"
+        android:scrollbarSize="0.00001dp"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imporatantrecycleradapter">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/questionbank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/scrollbg"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/text_book"
+                android:textAlignment="center"
+                android:textColor="#FFF">
+            </androidx.appcompat.widget.AppCompatButton>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/modelpaper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/scrollbg"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/model_paper"
+                android:textAlignment="center"
+                android:textColor="#FFF">
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/questionpaper"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:background="@drawable/scrollbg"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:text="@string/question_paper"
+                android:textAlignment="center"
+                android:textColor="#FFF">
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/textbook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/scrollbg"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:paddingTop="@dimen/_8sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingEnd="@dimen/_21sdp"
+                android:padding="@dimen/_8sdp"
+                android:text="@string/study_material"
+                android:textAlignment="center"
+                android:textColor="#FFF">
+
+            </androidx.appcompat.widget.AppCompatButton>
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

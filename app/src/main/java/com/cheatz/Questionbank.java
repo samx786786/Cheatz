@@ -57,7 +57,7 @@ public class Questionbank extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
-            title.setText(subjectname);
+
            // uploaddata(branchname,subbranchname,sem,year,subjectname);
            // uploadurl(branchname,subbranchname,sem,year,subjectname);
             NotifListx = new ArrayList<>();

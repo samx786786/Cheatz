@@ -7,123 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".Questionbank">
 
-
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:textColor="#FFF"
-        android:textSize="@dimen/_16sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="0dp"
-        android:scrollbarSize="0.1dp"
-        android:layout_height="@dimen/_167sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/questionbank"
-                android:layout_width="@dimen/_96sdp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:background="@drawable/infobg"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/text_book"
-                android:textAlignment="center"
-                android:textColor="#FFF">
-            </androidx.appcompat.widget.AppCompatButton>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/modelpaper"
-                android:layout_width="@dimen/_96sdp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:background="@drawable/infobg"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/model_paper"
-                android:textAlignment="center"
-                android:textColor="#FFF">
-            </androidx.appcompat.widget.AppCompatButton>
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/questionpaper"
-                android:layout_width="@dimen/_96sdp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_8sdp"
-
-                android:background="@drawable/infobg"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/question_paper"
-                android:textAlignment="center"
-                android:textColor="#FFF">
-            </androidx.appcompat.widget.AppCompatButton>
-
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/textbook"
-                android:layout_width="@dimen/_96sdp"
-                android:layout_height="match_parent"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:background="@drawable/infobg"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="@string/study_material"
-                android:textAlignment="center"
-                android:textColor="#FFF">
-
-            </androidx.appcompat.widget.AppCompatButton>
-
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/important_questions"
-        android:ellipsize="end"
-        android:maxLines="1"
-        android:textAlignment="center"
-        android:textColor="#FFF"
-        android:textSize="@dimen/_16sdp"
-        android:layout_marginStart="@dimen/_8sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
-
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/importantquetion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:id="@+id/importantquetion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_marginBottom="@dimen/_8sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:background="@drawable/importantlayoutbg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="10dp">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/_16sdp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:maxLines="1"
+            android:text="@string/important_questions"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
