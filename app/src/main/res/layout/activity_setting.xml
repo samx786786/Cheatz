@@ -24,7 +24,7 @@
         android:layout_marginStart="@dimen/_16sdp"
         app:cardBackgroundColor="#000"
         android:layout_marginEnd="@dimen/_16sdp"
-        android:layout_height="@dimen/_280sdp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -38,16 +38,18 @@
             <TextView
                 android:id="@+id/textView13"
                 android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_16sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_21sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:ellipsize="end"
+                android:maxLines="4"
                 android:textAlignment="center"
                 android:textAllCaps="false"
                 android:textColor="#FFF"
-                android:maxLines="4"
-                android:ellipsize="end"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:textSize="@dimen/_18sdp"
+                app:layout_constraintBottom_toTopOf="@+id/button4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -55,17 +57,17 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button4"
                 android:layout_width="0dp"
-                android:layout_marginEnd="@dimen/_36sdp"
-                android:layout_marginStart="@dimen/_36sdp"
                 android:layout_height="wrap_content"
-                android:text="@string/reset"
-                android:maxLines="1"
-                android:textColor="#FFF"
+                android:layout_marginStart="@dimen/_36sdp"
+                android:layout_marginEnd="@dimen/_36sdp"
                 android:background="@drawable/resetbuttonbg"
-                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:maxLines="1"
+                android:text="@string/reset"
+                android:textColor="#FFF"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+                app:layout_constraintStart_toStartOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

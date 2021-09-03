@@ -46,6 +46,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_icon_ionic_ios_settings" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <androidx.recyclerview.widget.RecyclerView

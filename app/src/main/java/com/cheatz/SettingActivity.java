@@ -1,13 +1,16 @@
 package com.cheatz;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class SettingActivity extends AppCompatActivity {
-
 
     Button reset;
     TextView title;
@@ -28,6 +31,18 @@ public class SettingActivity extends AppCompatActivity {
         String subbranchname = sharedPreferences.getString(TEXT2, "");
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
-        title.setText(branchname+"\n"+subbranchname+"\n"+year+"\n"+sem);
+        title.setText(branchname+"\n"+subbranchname+"\n"+sem+"\n"+year);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                SharedPreferences preferences =getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.clear();
+                editor.apply();
+                Intent intent = new Intent(SettingActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

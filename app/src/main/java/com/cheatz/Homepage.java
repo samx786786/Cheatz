@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
@@ -34,6 +35,7 @@ public class Homepage extends AppCompatActivity {
     private List<Homemodel> NotifListx;
     FirebaseFirestore firestore;
     ProgressBar progressBar;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,14 @@ public class Homepage extends AppCompatActivity {
         String subbranchname = sharedPreferences.getString(TEXT2, "");
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
+        imageView=findViewById(R.id.imageView6);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Homepage.this, SettingActivity.class);
+                startActivity(intent);
+            }
+        });
         if (branchname.equals(""))
         {
             Intent intent = new Intent(Homepage.this, MainActivity.class);
