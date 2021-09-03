@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cheatz"
-    xmlns:dist="http://schemas.android.com/apk/distribution">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.cheatz">
 
     <dist:module dist:instant="true" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,6 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cheatz">
+        <activity android:name=".SettingActivity"></activity>
         <activity
             android:name=".ImportantActivity"
             android:screenOrientation="portrait" />
@@ -37,25 +39,21 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".ProfileActivity"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".TestActivity"
-            android:screenOrientation="portrait">
-        </activity>
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait" />
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/purple_700"/>
-        
+            android:resource="@color/purple_700" />
+
         <service
             android:name=".MyFirebaseMessagingService"
             android:exported="false">
