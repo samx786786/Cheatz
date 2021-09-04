@@ -20,6 +20,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.messaging.FirebaseMessaging;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -100,9 +101,16 @@ public class ProfileSavedataActivity extends AppCompatActivity {
                     editor.putString(TEXT3,sem);
                     editor.putString(TEXT4,year);
                     editor.apply();
-                    Toast.makeText(ProfileSavedataActivity.this, "Student profile saved"+"\n"+branchname+"\n"+year+"\n"+subbranch+"\n"+sem, Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(ProfileSavedataActivity.this, Homepage.class);
-                    startActivity(intent);
+
+                    FirebaseMessaging.getInstance().subscribeToTopic("news").addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(ProfileSavedataActivity.this, "Student profile saved"+"\n"+branchname+"\n"+year+"\n"+subbranch+"\n"+sem, Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(ProfileSavedataActivity.this, Homepage.class);
+                            startActivity(intent);
+                        }
+                    });
+
                 }
             });
         }
