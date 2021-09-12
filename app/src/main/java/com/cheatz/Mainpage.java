@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -51,13 +50,11 @@ public class Mainpage extends AppCompatActivity {
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
     ImageView notesicon,questionbankicon,importantquestionicon;
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
-
         notesicon=findViewById(R.id.imageView7);
         questionbankicon=findViewById(R.id.imageView4);
         importantquestionicon=findViewById(R.id.imageView5);

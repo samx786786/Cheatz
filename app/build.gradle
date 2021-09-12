@@ -51,6 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-appindexing:20.0.0'
     implementation 'com.google.firebase:firebase-crashlytics:18.2.1'
     implementation 'com.google.firebase:firebase-analytics:19.0.1'
+    implementation 'com.google.android.play:core:1.10.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
@@ -58,5 +59,6 @@ dependencies {
     implementation 'com.jsibbold:zoomage:1.3.1' // zoom in library
     implementation 'com.airbnb.android:lottie:3.4.4' // animation view
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //adaptive size library
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
 
 }
