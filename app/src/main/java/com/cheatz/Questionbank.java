@@ -56,6 +56,7 @@ public class Questionbank extends AppCompatActivity {
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
         pdfView = findViewById(R.id.idPDFView);
+
         Bundle bundle1 = getIntent().getExtras();
         if (bundle1 != null)
         {
@@ -156,6 +157,7 @@ public class Questionbank extends AppCompatActivity {
         @Override
         protected void onPostExecute(InputStream inputStream) {
             loadingstatus.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
             pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
         }
     }

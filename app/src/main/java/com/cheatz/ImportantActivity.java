@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.net.ssl.HttpsURLConnection;
 
 public class ImportantActivity extends AppCompatActivity {
@@ -40,6 +43,7 @@ public class ImportantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_important);
         firestore = FirebaseFirestore.getInstance();
         progressBar=findViewById(R.id.progressBar8);
+        loadingstatus=findViewById(R.id.textView14);
         progressBar.setVisibility(View.VISIBLE);
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
@@ -51,6 +55,7 @@ public class ImportantActivity extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
+          //  uploadurl(branchname,subbranchname,sem,year,subjectname);
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Importantquestion").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
@@ -71,6 +76,17 @@ public class ImportantActivity extends AppCompatActivity {
             });
 
         }
+    }
+
+    private void uploadurl(String branchname, String subbranchname, String sem, String year, String subjectname) {
+        Map<String, String> userMap = new HashMap<>();
+        userMap.put("Pdfurl","https://firebasestorage.googleapis.com/v0/b/cheatz-438e9.appspot.com/o/demo%20pdf%2Fwaves_quantum.pdf?alt=media&token=8e111e5e-5df0-420a-ab2a-84711aa7ee97");
+        firestore.collection(branchname+subbranchname+sem+year+subjectname+"Importantquestion").document("tools").set(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(ImportantActivity.this, "Task Completed", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -102,6 +118,7 @@ public class ImportantActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(InputStream inputStream) {
             loadingstatus.setVisibility(View.INVISIBLE);
+            progressBar.setVisibility(View.INVISIBLE);
             pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
         }
     }
