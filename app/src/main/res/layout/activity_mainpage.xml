@@ -6,24 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mainpage">
+
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/idPDFView"
+        android:background="#000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.github.barteksc.pdfviewer.PDFView>
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hunderprecentageconstrainlayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="visible"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -72,14 +74,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewfifty"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -140,14 +134,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewpass"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -236,4 +223,10 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,7 +56,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.squareup.picasso:picasso:2.71828' //image loader
-    implementation 'com.jsibbold:zoomage:1.3.1' // zoom in library
     implementation 'com.airbnb.android:lottie:3.4.4' // animation view
     implementation 'com.intuit.sdp:sdp-android:1.0.6' //adaptive size library
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
