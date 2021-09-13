@@ -7,48 +7,68 @@
     android:layout_height="match_parent"
     tools:context=".ImportantActivity">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/imporatantrecycleradapter"
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/idPDFView"
+        android:background="#000"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-    </androidx.recyclerview.widget.RecyclerView>
-
-
+        android:layout_height="match_parent">
+    </com.github.barteksc.pdfviewer.PDFView>
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_marginBottom="@dimen/_8sdp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginEnd="@dimen/_8sdp"
         android:background="@drawable/importantlayoutbg"
         app:layout_constraintBottom_toBottomOf="parent"
         tools:layout_editor_absoluteX="10dp">
 
-
         <TextView
             android:id="@+id/textView4"
             android:layout_width="0dp"
-            android:layout_marginStart="@dimen/_8sdp"
-            android:layout_marginEnd="@dimen/_8sdp"
             android:layout_height="wrap_content"
-            android:textSize="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:maxLines="1"
+            android:text="@string/important_synopsis"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="#FFF"
-            android:layout_marginBottom="@dimen/_12sdp"
-            android:layout_marginTop="@dimen/_12sdp"
-            android:maxLines="1"
-            android:text="@string/important_synopsis"
+            android:textSize="@dimen/_16sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+    <ProgressBar
+        android:id="@+id/progressBar8"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFF"
+        android:textSize="@dimen/_16sdp"
+        android:visibility="visible"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_margin="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

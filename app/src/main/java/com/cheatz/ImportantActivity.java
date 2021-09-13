@@ -1,24 +1,26 @@
 package com.cheatz;
 
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import com.github.barteksc.pdfviewer.PDFView;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import javax.net.ssl.HttpsURLConnection;
 
 public class ImportantActivity extends AppCompatActivity {
 
@@ -28,62 +30,80 @@ public class ImportantActivity extends AppCompatActivity {
     public static final String TEXT3 = "text3";
     public static final String TEXT4 = "text4";
     FirebaseFirestore firestore;
-    private SynopsisRecyclerAdapter notificationsAdapterx;
-    private List<SynopsisModel> NotifListx;
+    PDFView pdfView;
+    ProgressBar progressBar;
+    TextView loadingstatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_important);
         firestore = FirebaseFirestore.getInstance();
+        progressBar=findViewById(R.id.progressBar8);
+        progressBar.setVisibility(View.VISIBLE);
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
         String subbranchname = sharedPreferences.getString(TEXT2, "");
         String year = sharedPreferences.getString(TEXT3, "");
         String sem = sharedPreferences.getString(TEXT4, "");
+        pdfView = findViewById(R.id.idPDFView);
         Bundle bundle1 = getIntent().getExtras();
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
-           // uploaddata(branchname,subbranchname,sem,year,subjectname);
-            NotifListx = new ArrayList<>();
-            RecyclerView notificationList = findViewById(R.id.imporatantrecycleradapter);
-            notificationsAdapterx = new SynopsisRecyclerAdapter(NotifListx);
-            notificationList.setHasFixedSize(true);
-            notificationList.setLayoutManager(new LinearLayoutManager(this));
-            notificationList.setAdapter(notificationsAdapterx);
-            firestore = FirebaseFirestore.getInstance();
-            firestore.collection(branchname+subbranchname+sem+year+subjectname+"Synopsis").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
+            firestore.collection(branchname+subbranchname+sem+year+subjectname+"Importantquestion").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
-                public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
-
-                    for(DocumentChange doc: documentSnapshots.getDocumentChanges()) {
-                        SynopsisModel notifications = doc.getDocument().toObject(SynopsisModel.class);
-                        NotifListx.add(notifications);
-                        notificationsAdapterx.notifyDataSetChanged();
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                    if (task.isSuccessful()) {
+                        if (task.getResult().exists()) {
+                            String pdfurl=task.getResult().getString("Pdfurl");
+                            loadpdf(pdfurl);
+                        }
                     }
                 }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Toast.makeText(ImportantActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.VISIBLE);
+                    loadingstatus.setText(e.getMessage());
+                }
             });
+
         }
     }
-    private void uploaddata(String branchname, String subbranchname, String sem, String year, String subjectname) {
 
-        Map<String, String> userMapy1 = new HashMap<>();
-        userMapy1.put("url","https://firebasestorage.googleapis.com/v0/b/cheatz-438e9.appspot.com/o/demo%20pfg%2Fquantum%20coding_page-0001.jpg?alt=media&token=2aba7b5d-371c-4575-a2ef-fcf6463dca20");
-        firestore.collection(branchname+subbranchname+sem+year+subjectname+"Synopsis").add(userMapy1);
 
-        Map<String, String> userMapy2 = new HashMap<>();
-        userMapy2.put("url","https://firebasestorage.googleapis.com/v0/b/cheatz-438e9.appspot.com/o/demo%20pfg%2Fquantum%20coding_page-0002.jpg?alt=media&token=eab31597-03a3-470d-a9b7-323491118ad0");
-        firestore.collection(branchname+subbranchname+sem+year+subjectname+"Synopsis").add(userMapy2);
-
-        Map<String, String> userMapy3 = new HashMap<>();
-        userMapy3.put("url","https://firebasestorage.googleapis.com/v0/b/cheatz-438e9.appspot.com/o/demo%20pfg%2Fquantum%20coding_page-0003.jpg?alt=media&token=087d0eaa-ccb0-4fbb-8d82-c6549830a0a5");
-        firestore.collection(branchname+subbranchname+sem+year+subjectname+"Synopsis").add(userMapy3).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentReference> task) {
-                Toast.makeText(ImportantActivity.this, "Task Completed", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+    private void loadpdf(String pdfurl) {
+        loadingstatus.setText("rendering pdf...");
+        new RetrivePDFfromUrlimp().execute(pdfurl);
     }
+
+
+
+    class RetrivePDFfromUrlimp extends AsyncTask<String, Void, InputStream> {
+        @Override
+        protected InputStream doInBackground(String... strings) {
+            InputStream inputStream = null;
+            try {
+                URL url = new URL(strings[0]);
+                HttpURLConnection urlConnection = (HttpsURLConnection) url.openConnection();
+                if (urlConnection.getResponseCode() == 200) {
+                    inputStream = new BufferedInputStream(urlConnection.getInputStream());
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                return null;
+            }
+            return inputStream;
+        }
+
+        @Override
+        protected void onPostExecute(InputStream inputStream) {
+            loadingstatus.setVisibility(View.INVISIBLE);
+            pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
+        }
+    }
+
 }
