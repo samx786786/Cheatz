@@ -83,7 +83,9 @@ public class Homepage extends AppCompatActivity {
         NotifListx = new ArrayList<>();
         RecyclerView notificationList = findViewById(R.id.homepagerecyler);
         notificationsAdapterx = new HomeRecyclerAdapter(NotifListx);
-        notificationList.setHasFixedSize(true);
+        notificationList.setDrawingCacheEnabled(true);
+        notificationList.setItemAnimator(null);
+        notificationList.setNestedScrollingEnabled(false);
         notificationList.setLayoutManager(new LinearLayoutManager(this));
         notificationList.setAdapter(notificationsAdapterx);
        // uploaddata(branchname,subbranchname,year,sem);

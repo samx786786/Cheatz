@@ -7,13 +7,14 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -26,13 +27,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.net.ssl.HttpsURLConnection;
 
 
 public class Mainpage extends AppCompatActivity {
-
-
+    
     public static final String SHARED_PREFS = "sharedPrefs";
     public static final String TEXT1 = "text";
     public static final String TEXT2 = "text2";
@@ -47,13 +46,16 @@ public class Mainpage extends AppCompatActivity {
     ConstraintLayout Constrainlayoutpass;
     ImageView arrowpass;
     ImageView notesicon,questionbankicon,importantquestionicon;
+    ProgressBar progressBar;
+    TextView loading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mainpage);
+        loading=findViewById(R.id.textView20);
         firestore = FirebaseFirestore.getInstance();
-
+        progressBar=findViewById(R.id.progressBar6);
         notesicon=findViewById(R.id.imageView7);
         questionbankicon=findViewById(R.id.imageView4);
         importantquestionicon=findViewById(R.id.imageView5);
@@ -74,6 +76,8 @@ public class Mainpage extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
+            loading.setVisibility(View.VISIBLE);
+            loading.setText("Fetching Urls...");
             questionbankicon.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -107,16 +111,16 @@ public class Mainpage extends AppCompatActivity {
                                     startActivity(browserIntent);
                                 }
                             });
+                            progressBar.setVisibility(View.VISIBLE);
                             new RetrivePDFfromUrlimp().execute(pdf100);
-
+                            loading.setText("Rendering Pdf...");
                             arrowhundred.setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
                                     Constrainlayouthundered.setVisibility(View.GONE);
                                     Constrainlayoutpass.setVisibility(View.GONE);
                                     Constanlayoutfifityplus.setVisibility(View.VISIBLE);
-                                    // load 50 in pdf view
-
+                                    progressBar.setVisibility(View.VISIBLE);
                                     new RetrivePDFfromUrlimp().execute(pdf50);
                                 }
                             });
@@ -126,8 +130,7 @@ public class Mainpage extends AppCompatActivity {
                                     Constanlayoutfifityplus.setVisibility(View.GONE);
                                     Constrainlayouthundered.setVisibility(View.GONE);
                                     Constrainlayoutpass.setVisibility(View.VISIBLE);
-                                    // load pass in pdf view
-
+                                    progressBar.setVisibility(View.VISIBLE);
                                     new RetrivePDFfromUrlimp().execute(pdfpass);
 
                                 }
@@ -138,8 +141,7 @@ public class Mainpage extends AppCompatActivity {
                                     Constanlayoutfifityplus.setVisibility(View.GONE);
                                     Constrainlayouthundered.setVisibility(View.VISIBLE);
                                     Constrainlayoutpass.setVisibility(View.GONE);
-                                    // load 100 in pdf view
-
+                                    progressBar.setVisibility(View.VISIBLE);
                                     new RetrivePDFfromUrlimp().execute(pdf100);
 
                                 }
@@ -150,14 +152,10 @@ public class Mainpage extends AppCompatActivity {
                                     Constanlayoutfifityplus.setVisibility(View.VISIBLE);
                                     Constrainlayouthundered.setVisibility(View.GONE);
                                     Constrainlayoutpass.setVisibility(View.GONE);
-                                    // load 50 in pdf view
-
+                                    progressBar.setVisibility(View.VISIBLE);
                                     new RetrivePDFfromUrlimp().execute(pdf50);
-
                                 }
                             });
-
-
                         }
                     }
                 }
@@ -165,6 +163,8 @@ public class Mainpage extends AppCompatActivity {
                 @Override
                 public void onFailure(@NonNull Exception e) {
                     Toast.makeText(Mainpage.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    loading.setVisibility(View.GONE);
+                    progressBar.setVisibility(View.GONE);
                 }
             });
         }
@@ -208,8 +208,13 @@ public class Mainpage extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-
-            pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
+            pdfView.fromStream(inputStream).enableDoubletap(true).onRender(new OnRenderListener() {
+                @Override
+                public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
+                    progressBar.setVisibility(View.GONE);
+                    loading.setVisibility(View.GONE);
+                }
+            }).spacing(4).load();
         }
     }
 

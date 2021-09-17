@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -117,7 +118,7 @@ public class Questionbank extends AppCompatActivity {
     }
 
     private void loadpdf(String pdfurl) {
-        loadingstatus.setText("rendering pdf...");
+        loadingstatus.setText("Rendering Pdf...");
         new RetrivePDFfromUrl().execute(pdfurl);
     }
 
@@ -156,9 +157,13 @@ public class Questionbank extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-            loadingstatus.setVisibility(View.INVISIBLE);
-            progressBar.setVisibility(View.INVISIBLE);
-            pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
+            pdfView.fromStream(inputStream).enableDoubletap(true).onRender(new OnRenderListener() {
+                @Override
+                public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
+                    loadingstatus.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.INVISIBLE);
+                }
+            }).spacing(4).load();
         }
     }
 

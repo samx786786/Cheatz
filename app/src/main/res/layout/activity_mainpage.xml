@@ -13,8 +13,36 @@
         android:background="#000"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
     </com.github.barteksc.pdfviewer.PDFView>
 
+    <ProgressBar
+        android:id="@+id/progressBar6"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:indeterminateTint="#32405B"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/idPDFView"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintStart_toStartOf="@+id/idPDFView"
+        app:layout_constraintTop_toTopOf="@+id/idPDFView" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="0dp"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_4sdp"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:textSize="@dimen/_16sdp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFF"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar6" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/hunderprecentageconstrainlayout"

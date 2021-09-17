@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.github.barteksc.pdfviewer.PDFView;
+import com.github.barteksc.pdfviewer.listener.OnRenderListener;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
@@ -54,6 +55,7 @@ public class ImportantActivity extends AppCompatActivity {
         if (bundle1 != null)
         {
             String subjectname = bundle1.get("subjectname").toString();
+            loadingstatus.setText("Fetching Urls...");
           //  uploadurl(branchname,subbranchname,sem,year,subjectname);
             firestore.collection(branchname+subbranchname+sem+year+subjectname+"Importantquestion").document("tools").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
@@ -90,7 +92,7 @@ public class ImportantActivity extends AppCompatActivity {
 
 
     private void loadpdf(String pdfurl) {
-        loadingstatus.setText("rendering pdf...");
+        loadingstatus.setText("Rendering Pdf...");
         new RetrivePDFfromUrlimp().execute(pdfurl);
     }
 
@@ -116,9 +118,13 @@ public class ImportantActivity extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(InputStream inputStream) {
-            loadingstatus.setVisibility(View.INVISIBLE);
-            progressBar.setVisibility(View.INVISIBLE);
-            pdfView.fromStream(inputStream).enableDoubletap(true).enableAntialiasing(true).spacing(4).load();
+            pdfView.fromStream(inputStream).enableDoubletap(true).onRender(new OnRenderListener() {
+                @Override
+                public void onInitiallyRendered(int nbPages, float pageWidth, float pageHeight) {
+                    progressBar.setVisibility(View.INVISIBLE);
+                    loadingstatus.setVisibility(View.INVISIBLE);
+                }
+            }).spacing(4).load();
         }
     }
 

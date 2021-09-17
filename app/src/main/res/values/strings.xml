@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Cheatz</string>
     <string name="about">info</string>
-    <string name="info">info</string>
     <string name="education_made_easy_enabling">Cheatz Enabling</string>
     <string name="student_access_of_various">Student Access Of Various</string>
     <string name="resources_to_allocate_ease">Resources To Allocate Ease</string>
@@ -20,4 +19,5 @@
     <string name="easy">Easy</string>
     <string name="loading">Loading...</string>
     <string name="reset">Reset</string>
+    <string name="info">info</string>
 </resources>
