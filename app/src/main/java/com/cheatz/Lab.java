@@ -2,6 +2,7 @@ package com.cheatz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
@@ -40,14 +41,30 @@ public class Lab extends AppCompatActivity {
     private List<labmodel> NotifListx;
     FirebaseFirestore firestore;
     TextView title;
-    ImageView record,manuel;
+    ImageView record,manuel,info,back;
     ProgressBar progressBar;
+    ConstraintLayout infolayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lab);
         progressBar=findViewById(R.id.progressBar5);
+        infolayout=findViewById(R.id.infolayout);
+        info=findViewById(R.id.imageView6);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                infolayout.setVisibility(View.VISIBLE);
+            }
+        });
+        back=findViewById(R.id.imageView11);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                infolayout.setVisibility(View.GONE);
+            }
+        });
         SharedPreferences sharedPreferences = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         String branchname = sharedPreferences.getString(TEXT1, "");
         String subbranchname = sharedPreferences.getString(TEXT2, "");

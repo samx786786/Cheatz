@@ -164,7 +164,7 @@
                     android:textAlignment="center"
                     android:textAllCaps="false"
                     android:textColor="#FFF"
-                    android:textSize="@dimen/_26sdp"
+                    android:textSize="@dimen/_32sdp"
                     app:layout_constraintBottom_toTopOf="@+id/imageView8"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
@@ -223,9 +223,9 @@
 
                 <ImageView
                     android:id="@+id/imageView11"
-                    android:layout_width="@dimen/_35sdp"
-                    android:layout_height="@dimen/_35sdp"
-                    android:layout_marginTop="@dimen/_34sdp"
+                    android:layout_width="@dimen/_45sdp"
+                    android:layout_height="@dimen/_45sdp"
+                    android:layout_marginTop="@dimen/_46sdp"
                     android:background="@drawable/whitecircle"
                     android:scaleType="centerInside"
                     app:layout_constraintEnd_toEndOf="parent"
