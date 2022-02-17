@@ -3,92 +3,221 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#000"
+    android:background="@color/teal_700"
     android:layout_height="match_parent"
     tools:context=".SettingActivity">
 
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#000"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/background1">
-    </ImageView>
+        android:layout_marginStart="@dimen/_21sdp"
+        android:layout_marginEnd="@dimen/_21sdp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/whitebg"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="@dimen/_85sdp"
+            android:layout_height="@dimen/_85sdp"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/helmet" />
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/student_profile"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#292e37"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_21sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginEnd="@dimen/_21sdp"
+            android:background="@drawable/buttonbg2"
+            android:backgroundTint="@null"
+            android:backgroundTintMode="@null"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_56sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="@dimen/_56sdp"
+            android:paddingBottom="@dimen/_12sdp"
+            android:text="@string/reset"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_21sdp"
+            android:text="@string/info"
+            android:id="@+id/info"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardBackgroundColor="#000"
-        android:layout_marginStart="@dimen/_16sdp"
-        android:layout_marginEnd="@dimen/_16sdp"
-        app:cardCornerRadius="@dimen/_16sdp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="21dp">
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginStart="@dimen/_21sdp"
+        android:layout_marginEnd="@dimen/_21sdp"
+        android:background="@drawable/whitebg2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/textViewx"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginEnd="@dimen/_24sdp"
+            android:background="@null"
+            android:backgroundTint="@null"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/help_us_improve"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:textColor="#292e37"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_80sdp"
+            android:scaleType="centerCrop"
+            android:backgroundTint="@android:color/transparent"
+            android:background="@android:color/transparent"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/text" />
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="@dimen/_8sdp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_16sdp"
+            android:background="@drawable/buttonbg"
+            android:backgroundTint="@null"
+            android:backgroundTintMode="@null"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingStart="@dimen/_56sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingEnd="@dimen/_56sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:text="@string/submit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:ems="10"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:hint="@string/suggestion"
+            android:inputType="textMultiLine"
+            android:maxLines="3"
+            android:backgroundTint="@android:color/transparent"
+            android:paddingStart="@dimen/_16sdp"
+            android:paddingTop="@dimen/_16sdp"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/grey"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewx" />
 
-            <TextView
-                android:id="@+id/textView13"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_21sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_8sdp"
-                android:ellipsize="end"
-                android:maxLines="4"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#FFF"
-                android:textSize="@dimen/_18sdp"
-                app:layout_constraintBottom_toTopOf="@+id/button4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewx" />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_36sdp"
-                android:layout_marginEnd="@dimen/_36sdp"
-                android:layout_marginBottom="@dimen/_24sdp"
-                android:background="@drawable/resetbuttonbg"
-                android:maxLines="1"
-                android:text="@string/reset"
-                android:textColor="#FFF"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Setting"
-        android:layout_marginBottom="@dimen/_8sdp"
-        android:textColor="#FFF"
-        android:textSize="@dimen/_16sdp"
-        android:textAllCaps="false"
-        android:textAlignment="center"
-        android:ellipsize="end"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

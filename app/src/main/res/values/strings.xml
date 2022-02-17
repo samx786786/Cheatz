@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Cheatz</string>
-    <string name="about">info</string>
+    <string name="info">info</string>
+    <string name="home">Home</string>
+    <string name="making_exam_easy">Making Exam Easy</string>
+    <string name="choose_one">Choose one</string>
+    <string name="setting">Setting</string>
+    <string name="hey">Hey</string>
+    <string name="select_your_subject">Select Your Subject</string>
     <string name="education_made_easy_enabling">Cheatz Enabling</string>
     <string name="student_access_of_various">Student Access Of Various</string>
     <string name="resources_to_allocate_ease">Resources To Allocate Ease</string>
@@ -8,16 +14,15 @@
     <string name="to_leverage_better_scores">To Leverage Better Scores</string>
     <string name="during_exams_lab_internals">During Exams, Lab, Internals.</string>
     <string name="of_access_for_student_s">Of Access </string>
-    <string name="syllabus">Syllabus</string>
-    <string name="viva_questions">Viva Questions</string>
-    <string name="text_book">Text book</string>
-    <string name="question_paper">question paper</string>
-    <string name="model_paper">Model paper</string>
-    <string name="study_material">Study Material</string>
-    <string name="_50">50 +</string>
-    <string name="important_synopsis">Important Synopsis</string>
-    <string name="easy">Easy</string>
-    <string name="loading">Loading...</string>
+    <string name="student_profile">Student Profile</string>
     <string name="reset">Reset</string>
-    <string name="info">info</string>
+    <string name="help_us_improve">Help Us Improve</string>
+    <string name="submit">Submit</string>
+    <string name="suggestion">Suggestion ?</string>
+    <string name="enter_the_below_code">Enter the Below Code To Open The Document On Your Desktop</string>
+    <string name="go_to_cheatz_com">Go To cheatz.com</string>
+    <string name="msg_subscribed">subscriptioncompleted</string>
+    <string name="msg_subscribe_failed">subscrpitionfailed</string>
+    <!-- Strings used for fragments for navigation -->
+
 </resources>

@@ -1,26 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="#000"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InfoActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".infoActivity">
 
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
-        android:background="#000"
-        app:srcCompat="@drawable/background1"
-        android:scaleType="centerCrop"
+        android:scaleType="fitEnd"
+        android:backgroundTint="@android:color/transparent"
+        app:lottie_loop="true"
+        android:background="@android:color/transparent"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="84669-background-animation.json"
         android:layout_height="match_parent">
-    </ImageView>
+    </com.airbnb.lottie.LottieAnimationView>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="match_parent"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
+        android:scaleType="fitStart"
+        app:lottie_fileName="84668-background-animation.json"
+        android:layout_height="match_parent">
+    </com.airbnb.lottie.LottieAnimationView>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="@dimen/_250sdp"
         android:layout_height="@dimen/_250sdp"
-        android:background="@drawable/infobg"
+        android:background="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,14 +45,14 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/info"
-            android:textSize="@dimen/_24sdp"
-            android:textAllCaps="false"
-            android:textAlignment="center"
-            android:textColor="#FFF"
+            android:layout_marginTop="@dimen/_16sdp"
             android:ellipsize="end"
             android:maxLines="1"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:text="@string/info"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/orange"
+            android:textSize="@dimen/_24sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,13 +61,13 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_16sdp"
-           android:text="@string/education_made_easy_enabling"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:text="@string/education_made_easy_enabling"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +80,7 @@
             android:text="@string/student_access_of_various"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -79,7 +93,7 @@
             android:text="@string/resources_to_allocate_ease"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/textView8"
             app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -92,7 +106,7 @@
             android:text="@string/of_access_for_student_s"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/textView9"
             app:layout_constraintStart_toStartOf="@+id/textView9"
@@ -102,11 +116,11 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/during_exams_lab_internals"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
-            android:text="@string/during_exams_lab_internals"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintStart_toStartOf="@+id/textView7"
             app:layout_constraintTop_toBottomOf="@+id/textView10" />
@@ -118,7 +132,7 @@
             android:text="@string/to_leverage_better_scores"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/textView11"
             app:layout_constraintStart_toStartOf="@+id/textView11"
@@ -130,7 +144,7 @@
             android:text="@string/amp_reduce_educational_stress"
             android:textAlignment="textStart"
             android:textAllCaps="false"
-            android:textColor="#FFF"
+            android:textColor="#292e37"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="@+id/textView7"
             app:layout_constraintStart_toStartOf="@+id/textView7"
@@ -138,6 +152,16 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="@dimen/_150sdp"
+        android:layout_height="0dp"
+        android:backgroundTint="@android:color/transparent"
+        android:tint="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:srcCompat="@drawable/planet" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
