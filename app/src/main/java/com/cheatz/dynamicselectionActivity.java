@@ -6,25 +6,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.DocumentChange;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
 
 public class dynamicselectionActivity extends AppCompatActivity {
 
@@ -94,7 +86,7 @@ public class dynamicselectionActivity extends AppCompatActivity {
 
 
 
-            /*
+          /*
 
             Map<String, String> userMap = new HashMap<>();
             userMap.put("Subbranch","Test files");
@@ -109,10 +101,7 @@ public class dynamicselectionActivity extends AppCompatActivity {
                 }
             });
 
-
-
-             */
-
+           */
 
 
         }

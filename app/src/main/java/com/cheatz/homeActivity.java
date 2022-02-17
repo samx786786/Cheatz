@@ -148,11 +148,8 @@ public class homeActivity extends AppCompatActivity {
 
 
 
-
-
-
-
         /*
+
         Map<String, String> userMap = new HashMap<>();
         userMap.put("pdfurl","https://firebasestorage.googleapis.com/v0/b/cheatz-438e9.appspot.com/o/Applied%20Superconductivity%20Handbook%20on%20Devices%20and%20Applications%20By%20Paul%20Seidel.pdf?alt=media&token=da2e6920-315d-4efd-aada-2da4a3b8a8f9");
         userMap.put("subjectname","Test file 1");
@@ -169,9 +166,11 @@ public class homeActivity extends AppCompatActivity {
                 Toast.makeText(homeActivity.this,"hashmap updated",Toast.LENGTH_LONG).show();
             }
         });
-
-
+        
          */
+
+
+
 
 
 
