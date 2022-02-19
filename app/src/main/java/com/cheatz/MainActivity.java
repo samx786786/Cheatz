@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
         NotifListx = new ArrayList<>();
         RecyclerView notificationList = findViewById(R.id.recyclerView);
         notificationsAdapterx = new MainActivityAdapter(NotifListx);
@@ -60,6 +59,17 @@ public class MainActivity extends AppCompatActivity {
         notificationList.setNestedScrollingEnabled(false);
         notificationList.setLayoutManager(new LinearLayoutManager(this));
         notificationList.setAdapter(notificationsAdapterx);
+        FirebaseMessaging.getInstance().subscribeToTopic("news")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = getString(R.string.msg_subscribed);
+                        if (!task.isSuccessful()) {
+                            msg = getString(R.string.msg_subscribe_failed);
+                        }
+                        Log.d(TAG, msg);
+                    }
+                });
         firestore.collection("branch").addSnapshotListener(this, new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException e) {
@@ -68,17 +78,6 @@ public class MainActivity extends AppCompatActivity {
                     MainModel notifications = doc.getDocument().toObject(MainModel.class);
                     NotifListx.add(notifications);
                     notificationsAdapterx.notifyDataSetChanged();
-                    FirebaseMessaging.getInstance().subscribeToTopic("news")
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    String msg = getString(R.string.msg_subscribed);
-                                    if (!task.isSuccessful()) {
-                                        msg = getString(R.string.msg_subscribe_failed);
-                                    }
-                                    Log.d(TAG, msg);
-                                }
-                            });
                 }
             }
         });

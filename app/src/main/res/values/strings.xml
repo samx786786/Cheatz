@@ -23,6 +23,7 @@
     <string name="go_to_cheatz_com">Go To cheatz.com</string>
     <string name="msg_subscribed">subscriptioncompleted</string>
     <string name="msg_subscribe_failed">subscrpitionfailed</string>
+    <string name="hide">hide</string>
     <!-- Strings used for fragments for navigation -->
 
 </resources>
